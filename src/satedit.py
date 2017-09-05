@@ -27,9 +27,12 @@ currversion = '2.4'
 
 need_update = False
 
+FHD_Res = False
 HD_Res = False
-sz_w = getDesktop(0).size().width()
-if sz_w > 720:
+sz_y = getDesktop(0).size().height()
+if sz_y >= 1080:
+    FHD_Res = True
+elif sz_y >= 720 and sz_y <= 1079:
     HD_Res = True
 
 class Transponder():
@@ -360,10 +363,16 @@ class TransponderList(MenuList):
 
     def __init__(self):
         MenuList.__init__(self, list=[], enableWrapAround=True, content=eListboxPythonMultiContent)
-        self.rowHight = 20
-        self.l.setItemHeight(24)
-        self.l.setFont(0, gFont('Regular', 20))
-        self.l.setFont(1, gFont('Regular', 15))
+        if FHD_Res:
+            self.rowHight = 40
+            self.l.setItemHeight(40)
+            self.l.setFont(0, gFont('Regular', 27))
+            self.l.setFont(1, gFont('Regular', 23))
+        else:
+            self.rowHight = 20
+            self.l.setItemHeight(24)
+            self.l.setFont(0, gFont('Regular', 20))
+            self.l.setFont(1, gFont('Regular', 15))
     def setEntries(self, transponderlist):
         transRolloff = {'0_35': '0.35',
          '0_25': '0.25',
@@ -390,22 +399,22 @@ class TransponderList(MenuList):
             z += 1
             calc_xpos = lambda a: a[len(a) - 1][1] + a[len(a) - 1][3]
             color = transponder.importColor
-            if not HD_Res:
-                tp.append(MultiContentEntryText(pos=(0, 0), size=(55, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.system, color=color, border_width=1, border_color=806544))
-                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(45, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=str(int(transponder.frequency) / 1000), color=color, border_width=1, border_color=806544))
-                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(23, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.polarisation, color=color, border_width=1, border_color=806544))
-                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(48, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=str(int(transponder.symbolrate) / 1000), color=color, border_width=1, border_color=806544))
-                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(38, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transFec.get(transponder.fec), color=color, border_width=1, border_color=806544))
-                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(48, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.modulation, color=color, border_width=1, border_color=806544))
-                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(38, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transRolloff.get(transponder.rolloff), color=color, border_width=1, border_color=806544))
-                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(38, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.inversion, color=color, border_width=1, border_color=806544))
-                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(38, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.pilot, color=color, border_width=1, border_color=806544))
-                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(33, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.isid, color=color, border_width=1, border_color=806544))
-                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(46, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.plsmode, color=color, border_width=1, border_color=806544))
-                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(38, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.plscode, color=color, border_width=1, border_color=806544))
-                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(38, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.tsid, color=color, border_width=1, border_color=806544))
-                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(38, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.onid, color=color, border_width=1, border_color=806544))
-            else:
+            if FHD_Res:
+                tp.append(MultiContentEntryText(pos=(0, 0), size=(105, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.system, color=color, border_width=1, border_color=12092939))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(95, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=str(int(transponder.frequency) / 1000), color=color, border_width=1, border_color=12092939))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(70, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.polarisation, color=color, border_width=1, border_color=12092939))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(85, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=str(int(transponder.symbolrate) / 1000), color=color, border_width=1, border_color=12092939))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(80, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transFec.get(transponder.fec), color=color, border_width=1, border_color=12092939))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(105, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.modulation, color=color, border_width=1, border_color=12092939))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(85, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transRolloff.get(transponder.rolloff), color=color, border_width=1, border_color=12092939))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(85, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.inversion, color=color, border_width=1, border_color=12092939))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(80, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.pilot, color=color, border_width=1, border_color=12092939))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(75, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.isid, color=color, border_width=1, border_color=12092939))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(110, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.plsmode, color=color, border_width=1, border_color=12092939))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(110, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.plscode, color=color, border_width=1, border_color=12092939))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(80, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.tsid, color=color, border_width=1, border_color=12092939))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(80, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.onid, color=color, border_width=1, border_color=12092939))
+            elif HD_Res:
                 tp.append(MultiContentEntryText(pos=(0, 0), size=(75, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.system, color=color, border_width=1, border_color=12092939))
                 tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(65, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=str(int(transponder.frequency) / 1000), color=color, border_width=1, border_color=12092939))
                 tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(45, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.polarisation, color=color, border_width=1, border_color=12092939))
@@ -420,13 +429,31 @@ class TransponderList(MenuList):
                 tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(70, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.plscode, color=color, border_width=1, border_color=12092939))
                 tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(65, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.tsid, color=color, border_width=1, border_color=12092939))
                 tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(65, self.rowHight), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.onid, color=color, border_width=1, border_color=12092939))
+            else:
+                tp.append(MultiContentEntryText(pos=(0, 0), size=(55, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.system, color=color, border_width=1, border_color=806544))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(45, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=str(int(transponder.frequency) / 1000), color=color, border_width=1, border_color=806544))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(23, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.polarisation, color=color, border_width=1, border_color=806544))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(48, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=str(int(transponder.symbolrate) / 1000), color=color, border_width=1, border_color=806544))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(38, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transFec.get(transponder.fec), color=color, border_width=1, border_color=806544))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(48, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.modulation, color=color, border_width=1, border_color=806544))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(38, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transRolloff.get(transponder.rolloff), color=color, border_width=1, border_color=806544))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(38, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.inversion, color=color, border_width=1, border_color=806544))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(38, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.pilot, color=color, border_width=1, border_color=806544))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(33, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.isid, color=color, border_width=1, border_color=806544))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(46, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.plsmode, color=color, border_width=1, border_color=806544))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(38, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.plscode, color=color, border_width=1, border_color=806544))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(38, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.tsid, color=color, border_width=1, border_color=806544))
+                tp.append(MultiContentEntryText(pos=(calc_xpos(tp), 0), size=(38, self.rowHight), font=1, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=transponder.onid, color=color, border_width=1, border_color=806544))
             res.append(tp)
 
         self.l.setList(res)
 
 class TransponderEditor(Screen, ConfigListScreen, Transponder):
 
-    skin = '\n\t\t<screen position="center,center" size="560,400" title="Edit" >\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/red.png" position="0,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/green.png" position="140,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="280,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/blue.png" position="420,0" size="140,40" alphatest="on" />\n\t\t<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />\n\t\t<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />\n\t\t<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />\n\t\t<widget name="config" position="10,50" size="540,325" scrollbarMode="showOnDemand" />\n\t\t</screen>'
+    if FHD_Res:
+        skin = '\n\t\t<screen position="center,center" size="900,600" title="Edit" >\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/red.png" position="40,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/green.png" position="250,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="470,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/blue.png" position="690,0" size="140,40" alphatest="on" />\n\t\t<widget name="key_red" position="10,0" zPosition="1" size="200,40" font="Regular;25" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />\n\t\t<widget name="key_green" position="220,0" zPosition="1" size="200,40" font="Regular;25" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget name="key_yellow" position="440,0" zPosition="1" size="200,40" font="Regular;25" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />\n\t\t<widget name="key_blue" position="660,0" zPosition="1" size="200,40" font="Regular;25" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />\n\t\t<widget name="config" position="10,50" size="880,520" font="Regular;26" itemHeight="40" scrollbarMode="showOnDemand" />\n\t\t</screen>'
+    else:
+        skin = '\n\t\t<screen position="center,center" size="560,400" title="Edit" >\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/red.png" position="0,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/green.png" position="140,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="280,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/blue.png" position="420,0" size="140,40" alphatest="on" />\n\t\t<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />\n\t\t<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />\n\t\t<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />\n\t\t<widget name="config" position="10,50" size="540,325" scrollbarMode="showOnDemand" />\n\t\t</screen>'
 
     def __init__(self, session, transponderData = None):
         self.skin = TransponderEditor.skin
@@ -501,8 +528,8 @@ class TransponderEditor(Screen, ConfigListScreen, Transponder):
         self.list = []
         self.list.append(getConfigListEntry(_('System'), self.configTransponderSystem))
         if self.system == 'DVB-S' or self.system == 'DVB-S2':
-            self.list.append(getConfigListEntry(_('Freqency'), self.configTransponderFrequency))
-            self.list.append(getConfigListEntry(_('Polarisation'), self.configTransponderPolarisation))
+            self.list.append(getConfigListEntry(_('Frequency'), self.configTransponderFrequency))
+            self.list.append(getConfigListEntry(_('Polarization'), self.configTransponderPolarisation))
             self.list.append(getConfigListEntry(_('Symbolrate'), self.configTransponderSymbolrate))
         if self.system == 'DVB-S':
             self.list.append(getConfigListEntry(_('FEC'), self.configTransponderFec))
@@ -578,7 +605,9 @@ class TransponderEditor(Screen, ConfigListScreen, Transponder):
             self.createSetup()
 
 class TranspondersEditor(Screen):
-    if HD_Res:
+    if FHD_Res:
+        skin = '\n\t\t<screen position="center,center" size="1320,800" title="Transponders Editor" >\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/red.png" position="40,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/green.png" position="250,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="470,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/blue.png" position="690,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/ok.png" position="1280,0" size="35,35" alphatest="on" />\n\t\t<widget name="key_red" position="10,0" zPosition="1" size="200,40" font="Regular;23" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />\n\t\t<widget name="key_green" position="220,0" zPosition="1" size="200,40" font="Regular;23" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget name="key_yellow" position="440,0" zPosition="1" size="200,40" font="Regular;23" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />\n\t\t<widget name="key_blue" position="660,0" zPosition="1" size="200,40" font="Regular;23" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />\n\t\t<widget name="list" position="10,100" size="1300,680" scrollbarMode="showOnDemand" />\n\t\t<widget name="head" position="10,45" size="1300,45" scrollbarMode="showNever" />\n\t\t</screen>'
+    elif HD_Res:
         skin = '\n\t\t<screen position="center,center" size="920,460" title="Transponders Editor" >\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/red.png" position="0,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/green.png" position="140,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="280,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/blue.png" position="420,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/ok.png" position="880,0" size="35,35" alphatest="on" />\n\t\t<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />\n\t\t<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />\n\t\t<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />\n\t\t<widget name="list" position="0,64" size="920,384" scrollbarMode="showOnDemand" />\n\t\t<widget name="head" position="0,30" size="920,34" scrollbarMode="showNever" />\n\t\t</screen>'
     else:
         skin = '\n\t\t<screen position="center,center" size="585,430" title="Transponders Editor" >\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/red.png" position="0,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/green.png" position="140,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="280,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/blue.png" position="420,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/ok.png" position="540,5" size="35,35" alphatest="on"  zPosition="2" />\n\t\t<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />\n\t\t<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />\n\t\t<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />\n\t\t<widget name="list" position="0,64" size="585,335" scrollbarMode="showOnDemand" />\n\t\t<widget name="head" position="0,30" size="585,34" scrollbarMode="showNever" />\n\t\t</screen>'
@@ -618,20 +647,20 @@ class TranspondersEditor(Screen):
         self['list'].setEntries(self.transponderslist)
         self.onLayoutFinish.append(self.layoutFinished)
 
-        self.row = [['system', '1', False],
-         ['frequency', '2', False],
-         ['polarization', '3', False],
-         ['symbol_rate', '4', False],
-         ['fec_inner', '5', False],
-         ['modulation', '6', False],
-         ['rolloff', '7', False],
-         ['inversion', '8', False],
-         ['pilot', '9', False],
-         ['is_id', '10', False],
-         ['pls_mode', '11', False],
-         ['pls_code', '12', False],
-         ['tsid', '13', False],
-         ['onid', '14', False]]
+        self.row = [['System', '1', False],
+         ['Freq.', '2', False],
+         ['Pol.', '3', False],
+         ['SR', '4', False],
+         ['FEC', '5', False],
+         ['Modul.', '6', False],
+         ['Rolloff', '7', False],
+         ['Invers.', '8', False],
+         ['Pilot', '9', False],
+         ['IS ID', '10', False],
+         ['PLS Mode', '11', False],
+         ['PLS Code', '12', False],
+         ['TSID', '13', False],
+         ['ONID', '14', False]]
 
     def layoutFinished(self):
         try:
@@ -785,8 +814,12 @@ class SatelliteList(MenuList):
 
     def __init__(self):
         MenuList.__init__(self, list=[], enableWrapAround=True, content=eListboxPythonMultiContent)
-        self.l.setItemHeight(24)
-        self.l.setFont(0, gFont('Regular', 20))
+        if FHD_Res:
+            self.l.setItemHeight(40)
+            self.l.setFont(0, gFont('Regular', 27))
+        else:
+            self.l.setItemHeight(24)
+            self.l.setFont(0, gFont('Regular', 20))
 
     def setEntries(self, satelliteslist):
         res = []
@@ -804,12 +837,15 @@ class SatelliteList(MenuList):
                 color_sel = 65344
             backcolor = None
             backcolor_sel = None
-            a = HD_Res and 700 or 430
-            b = HD_Res and 170 or 103
+            a = FHD_Res and 1050 or HD_Res and 700 or 430
+            b = FHD_Res and 255 or HD_Res and 170 or 103
             if len(x) == 1:
                 backcolor = 1644912
                 backcolor_sel = 9466996
-            satentry.append(MultiContentEntryText(pos=(0, 0), size=(a, 24), font=0, flags=RT_HALIGN_LEFT | RT_VALIGN_TOP, text=satparameter.get('name'), color=color, color_sel=color_sel, backcolor=backcolor, backcolor_sel=backcolor_sel, border_width=1, border_color=15792383))
+            if FHD_Res:
+                satentry.append(MultiContentEntryText(pos=(0, 0), size=(a, 40), font=0, flags=RT_HALIGN_LEFT | RT_VALIGN_TOP, text=satparameter.get('name'), color=color, color_sel=color_sel, backcolor=backcolor, backcolor_sel=backcolor_sel, border_width=1, border_color=15792383))
+            else:
+                satentry.append(MultiContentEntryText(pos=(0, 0), size=(a, 24), font=0, flags=RT_HALIGN_LEFT | RT_VALIGN_TOP, text=satparameter.get('name'), color=color, color_sel=color_sel, backcolor=backcolor, backcolor_sel=backcolor_sel, border_width=1, border_color=15792383))
             pos = int(satparameter.get('position'))
             posStr = str(abs(pos) / 10) + '.' + str(abs(pos) % 10)
             if pos < 0:
@@ -818,7 +854,10 @@ class SatelliteList(MenuList):
                 posStr = posStr + ' ' + 'East'
             if pos == 0:
                 posStr = posStr + ' ' + 'Greenwich'
-            satentry.append(MultiContentEntryText(pos=(a, 0), size=(b, 24), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=posStr, color=color, color_sel=color_sel, backcolor=backcolor, backcolor_sel=backcolor_sel, border_width=1, border_color=15792383))
+            if FHD_Res:
+                satentry.append(MultiContentEntryText(pos=(a, 0), size=(b, 40), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=posStr, color=color, color_sel=color_sel, backcolor=backcolor, backcolor_sel=backcolor_sel, border_width=1, border_color=15792383))
+            else:
+                satentry.append(MultiContentEntryText(pos=(a, 0), size=(b, 24), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=posStr, color=color, color_sel=color_sel, backcolor=backcolor, backcolor_sel=backcolor_sel, border_width=1, border_color=15792383))
             res.append(satentry)
 
         self.l.setList(res)
@@ -827,7 +866,11 @@ class SatEditor(Screen, ConfigListScreen):
     flagNetworkScan = 1
     flagUseBAT = 2
     flagUseONIT = 4
-    skin = '\n\t\t<screen position="center,center" size="560,330" title="Edit" >\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/red.png" position="0,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/green.png" position="140,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="280,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/blue.png" position="420,0" size="140,40" alphatest="on" />\n\t\t<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />\n\t\t<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />\n\t\t<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />\n\t\t<widget name="config" position="10,50" size="540,200" scrollbarMode="showOnDemand" />\n\t\t</screen>'
+
+    if FHD_Res:
+        skin = '\n\t\t<screen position="center,center" size="900,540" title="Edit" >\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/red.png" position="40,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/green.png" position="250,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="470,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/blue.png" position="690,0" size="140,40" alphatest="on" />\n\t\t<widget name="key_red" position="10,0" zPosition="1" size="200,40" font="Regular;25" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />\n\t\t<widget name="key_green" position="220,0" zPosition="1" size="200,40" font="Regular;25" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget name="key_yellow" position="440,0" zPosition="1" size="200,40" font="Regular;25" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />\n\t\t<widget name="key_blue" position="660,0" zPosition="1" size="200,40" font="Regular;25" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />\n\t\t<widget name="config" position="10,50" size="880,480" font="Regular;26" itemHeight="40" scrollbarMode="showOnDemand" />\n\t\t</screen>'
+    else:
+        skin = '\n\t\t<screen position="center,center" size="560,330" title="Edit" >\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/red.png" position="0,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/green.png" position="140,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="280,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/blue.png" position="420,0" size="140,40" alphatest="on" />\n\t\t<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />\n\t\t<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />\n\t\t<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />\n\t\t<widget name="config" position="10,50" size="540,200" scrollbarMode="showOnDemand" />\n\t\t</screen>'
 
     def __init__(self, session, satelliteslist=None, satelliteData=None, clone=False):
         self.skin = SatEditor.skin
@@ -932,8 +975,12 @@ class Head(HTMLComponent, GUIComponent):
         GUIComponent.__init__(self)
         self.l = eListboxPythonMultiContent()
         self.l.setSelectionClip(eRect(0, 0, 0, 0))
-        self.l.setItemHeight(34)
-        self.l.setFont(0, gFont('Regular', 17))
+        if FHD_Res:
+            self.l.setItemHeight(40)
+            self.l.setFont(0, gFont('Regular', 25))
+        else:
+            self.l.setItemHeight(34)
+            self.l.setFont(0, gFont('Regular', 17))
 
     GUI_WIDGET = eListbox
 
@@ -944,12 +991,17 @@ class Head(HTMLComponent, GUIComponent):
         res = [None]
         if data is not None:
             for x in data:
-                res.append(MultiContentEntryText(pos=(x[0], 0), size=(x[1], 20), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=x[2], color=12632256, backcolor=625428280, color_sel=16777215, backcolor_sel=627073024, border_width=1, border_color=15792383))
+                if FHD_Res:
+                    res.append(MultiContentEntryText(pos=(x[0], 0), size=(x[1], 40), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=x[2], color=12632256, backcolor=625428280, color_sel=16777215, backcolor_sel=627073024, border_width=1, border_color=15792383))
+                else:
+                    res.append(MultiContentEntryText(pos=(x[0], 0), size=(x[1], 20), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=x[2], color=12632256, backcolor=625428280, color_sel=16777215, backcolor_sel=627073024, border_width=1, border_color=15792383))
 
         self.l.setList([res])
 
 class SatellitesEditor(Screen):
-    if HD_Res:
+    if FHD_Res:
+        skin = '\n\t\t<screen position="center,center" size="1320,800" title="TS-Satellites Editor" >\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/red.png" position="40,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/green.png" position="250,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="470,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/blue.png" position="690,0" size="140,40" alphatest="on" />\n\t\t<ePixmap  pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="470,0" size="140,40" alphatest="on" />\n\t\t<ePixmap  pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/ok.png" position="1280,0" size="35,35" alphatest="on" />\n\t\t<widget name="key_menu" zPosition="1" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/key_menu.png" position="1000,0" size="35,25" alphatest="on" />\n\t\t<widget name="key_red" position="10,0" zPosition="1" size="200,40" font="Regular;25" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />\n\t\t<widget name="key_green" position="220,0" zPosition="1" size="200,40" font="Regular;25" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget name="key_yellow" position="440,0" zPosition="1" size="200,40" font="Regular;25" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />\n\t\t<widget name="key_blue" position="660,0" zPosition="1" size="200,40" font="Regular;25" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />\n\t\t<widget name="list" position="10,100" size="1300,520" scrollbarMode="showOnDemand" />\n\t\t<widget name="head" position="10,50" size="1300,40" scrollbarMode="showNever" />\n\t\t<widget name="polhead" position="100,630" size="1220,40" />\n\t\t<widget name="bandlist" position="10,670" size="90,120" />\n\t\t<widget name="infolist" position="100,670" zPosition="2" size="1220,120" />\n\t\t</screen>'
+    elif HD_Res:
         skin = '\n\t\t<screen position="center,center" size="920,460" title="TS-Satellites Editor" >\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/red.png" position="0,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/green.png" position="140,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="280,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/blue.png" position="420,0" size="140,40" alphatest="on" />\n\t\t<ePixmap  pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="280,0" size="140,40" alphatest="on" />\n\t\t<ePixmap  pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/ok.png" position="880,0" size="35,35" alphatest="on" />\n\t\t<widget name="key_menu" zPosition="1" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/key_menu.png" position="880,20" size="35,25" alphatest="on" />\n\t\t<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />\n\t\t<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />\n\t\t<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />\n\t\t<widget name="list" position="0,64" size="920,240" scrollbarMode="showOnDemand" />\n\t\t<widget name="head" position="0,40" size="900,24" scrollbarMode="showNever" />\n\t\t<widget name="polhead" position="80,310" size="840,24" />\n\t\t<widget name="bandlist" position="0,334" size="80,72" />\n\t\t<widget name="infolist" position="80,334" zPosition="2" size="840,72" />\n\t\t</screen>'
     else:
         skin = '\n\t\t<screen position="center,center" size="560,430" title="TS-Satellites Editor" >\n\t\t<ePixmap  pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/red.png" position="0,0" size="140,40" alphatest="on" />\n\t\t<ePixmap  pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/green.png" position="140,0" size="140,40" alphatest="on" />\n\t\t<ePixmap  pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="280,0" size="140,40" alphatest="on" />\n\t\t<ePixmap  pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/blue.png" position="420,0" size="140,40" alphatest="on" />\n\t\t<ePixmap  pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="280,0" size="140,40" alphatest="on" />\n\t\t<ePixmap  pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/ok.png" position="530,40" size="35,25" alphatest="on"  zPosition="2" />\n\t\t<widget name="key_menu" zPosition="1" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/key_menu.png" position="530,20" size="35,25" alphatest="on"  />\n\t\t<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />\n\t\t<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />\n\t\t<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />\n\t\t<widget name="list" position="0,64" size="560,240" scrollbarMode="showOnDemand" />\n\t\t<widget name="head" position="0,40" size="560,24" scrollbarMode="showNever" />\n\t\t<widget name="polhead" position="55,310" size="500,24" />\n\t\t<widget name="bandlist" position="0,334" size="55,72" />\n\t\t<widget name="infolist" position="55,334"  zPosition="2" size="505,72" />\n\t\t</screen>'
@@ -994,18 +1046,30 @@ class SatellitesEditor(Screen):
         self['infolist'] = MenuList([])
         self['infolist'].l = eListboxPythonMultiContent()
         self['infolist'].l.setSelectionClip(eRect(0, 0, 0, 0))
-        self['infolist'].l.setItemHeight(24)
-        self['infolist'].l.setFont(0, gFont('Regular', 20))
+        if FHD_Res:
+            self['infolist'].l.setItemHeight(40)
+            self['infolist'].l.setFont(0, gFont('Regular', 27))
+        else:
+            self['infolist'].l.setItemHeight(24)
+            self['infolist'].l.setFont(0, gFont('Regular', 20))
         self['polhead'] = MenuList([])
         self['polhead'].l = eListboxPythonMultiContent()
         self['polhead'].l.setSelectionClip(eRect(0, 0, 0, 0))
-        self['polhead'].l.setItemHeight(24)
-        self['polhead'].l.setFont(0, gFont('Regular', 20))
+        if FHD_Res:
+            self['polhead'].l.setItemHeight(40)
+            self['polhead'].l.setFont(0, gFont('Regular', 27))
+        else:
+            self['polhead'].l.setItemHeight(24)
+            self['polhead'].l.setFont(0, gFont('Regular', 20))
         self['bandlist'] = MenuList([])
         self['bandlist'].l = eListboxPythonMultiContent()
         self['bandlist'].l.setSelectionClip(eRect(0, 0, 0, 0))
-        self['bandlist'].l.setItemHeight(24)
-        self['bandlist'].l.setFont(0, gFont('Regular', 20))
+        if FHD_Res:
+            self['bandlist'].l.setItemHeight(40)
+            self['bandlist'].l.setFont(0, gFont('Regular', 27))
+        else:
+            self['bandlist'].l.setItemHeight(24)
+            self['bandlist'].l.setFont(0, gFont('Regular', 20))
         self['head'] = Head()
         self['list'] = SatelliteList()
         self['list'].setEntries(self.satelliteslist)
@@ -1197,7 +1261,9 @@ class SatellitesEditor(Screen):
         l = []
         for entry in entryList:
             bandList = [None]
-            if HD_Res:
+            if FHD_Res:
+                bandList.append(MultiContentEntryText(pos=(0, 0), size=(120, 40), font=0, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER, text=entry, border_width=1, border_color=15792383))
+            elif HD_Res:
                 bandList.append(MultiContentEntryText(pos=(0, 0), size=(80, 24), font=0, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER, text=entry, border_width=1, border_color=15792383))
             else:
                 bandList.append(MultiContentEntryText(pos=(0, 0), size=(55, 24), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_CENTER, text=entry, border_width=1, border_color=15792383))
@@ -1211,15 +1277,27 @@ class SatellitesEditor(Screen):
          _('circular right'))
         xpos = 0
         polarisationList = [None]
-        x = HD_Res and 205 or 125
+        x = FHD_Res and 275 or HD_Res and 205 or 125
         for entry in entryList:
-            polarisationList.append(MultiContentEntryText(pos=(xpos, 0), size=(x, 24), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=entry, border_width=1, border_color=15792383))
+            if FHD_Res:
+                polarisationList.append(MultiContentEntryText(pos=(xpos, 0), size=(x, 40), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=entry, border_width=1, border_color=15792383))
+            else:
+                polarisationList.append(MultiContentEntryText(pos=(xpos, 0), size=(x, 24), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=entry, border_width=1, border_color=15792383))
             xpos = calc_xpos(polarisationList)
 
         self['polhead'].l.setList([polarisationList])
         l = []
         infolist = [None]
-        if HD_Res:
+        if FHD_Res:
+            entryList = (('dvb-s', 130),
+             ('dvb-s2', 145),
+             ('dvb-s', 130),
+             ('dvb-s2', 145),
+             ('dvb-s', 130),
+             ('dvb-s2', 145),
+             ('dvb-s', 130),
+             ('dvb-s2', 145))
+        elif HD_Res:
             entryList = (('dvb-s', 100),
              ('dvb-s2', 105),
              ('dvb-s', 100),
@@ -1238,14 +1316,23 @@ class SatellitesEditor(Screen):
              ('dvb-s', 60),
              ('dvb-s2', 65))
         xpos = 0
-        y = HD_Res and 50 or 24
+        y = FHD_Res and 75 or HD_Res and 50 or 24
         for entry in entryList:
             infolist.append(MultiContentEntryText(pos=(xpos, 0), size=(entry[1], y), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=entry[0], border_width=1, border_color=15792383))
             xpos = calc_xpos(infolist)
 
         l.append(infolist)
         infolist = [None]
-        if HD_Res:
+        if FHD_Res:
+            entryList = ((self.tp_ku_h, 130),
+             (self.tp_ku_h2, 145),
+             (self.tp_ku_v, 130),
+             (self.tp_ku_v2, 145),
+             (self.tp_ku_l, 130),
+             (self.tp_ku_l2, 145),
+             (self.tp_ku_r, 130),
+             (self.tp_ku_r2, 145))
+        elif HD_Res:
             entryList = ((self.tp_ku_h, 100),
              (self.tp_ku_h2, 105),
              (self.tp_ku_v, 100),
@@ -1270,7 +1357,16 @@ class SatellitesEditor(Screen):
 
         l.append(infolist)
         infolist = [None]
-        if HD_Res:
+        if FHD_Res:
+            entryList = ((self.tp_c_h, 130),
+             (self.tp_c_h2, 145),
+             (self.tp_c_v, 130),
+             (self.tp_c_v2, 145),
+             (self.tp_c_l, 130),
+             (self.tp_c_l2, 145),
+             (self.tp_c_r, 130),
+             (self.tp_c_r2, 145))
+        elif HD_Res:
             entryList = ((self.tp_c_h, 100),
              (self.tp_c_h2, 105),
              (self.tp_c_v, 100),
@@ -1290,7 +1386,10 @@ class SatellitesEditor(Screen):
              (self.tp_c_r2, 65))
         xpos = 0
         for entry in entryList:
-            infolist.append(MultiContentEntryText(pos=(xpos, 0), size=(entry[1], 24), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=str(entry[0]).lstrip('0'), border_width=1, border_color=15792383))
+            if FHD_Res:
+                infolist.append(MultiContentEntryText(pos=(xpos, 0), size=(entry[1], 40), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=str(entry[0]).lstrip('0'), border_width=1, border_color=15792383))
+            else:
+                infolist.append(MultiContentEntryText(pos=(xpos, 0), size=(entry[1], 24), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=str(entry[0]).lstrip('0'), border_width=1, border_color=15792383))
             xpos = calc_xpos(infolist)
 
         l.append(infolist)
