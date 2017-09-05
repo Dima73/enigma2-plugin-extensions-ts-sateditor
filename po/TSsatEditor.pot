@@ -108,7 +108,7 @@ msgid "FEC"
 msgstr ""
 
 #: satedit.py:567
-msgid "Freqency"
+msgid "Frequency"
 msgstr ""
 
 #: satedit.py:575
@@ -152,7 +152,7 @@ msgid "Pilot"
 msgstr ""
 
 #: satedit.py:568
-msgid "Polarisation"
+msgid "Polarization"
 msgstr ""
 
 #: satedit.py:940 satedit.py:1066

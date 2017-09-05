@@ -163,7 +163,7 @@ msgstr "Включить пользовательский '/etc/enigma2/satellit
 msgid "FEC"
 msgstr "FEC"
 
-msgid "Freqency"
+msgid "Frequency"
 msgstr "Частота"
 
 msgid "Input Stream ID"
@@ -205,7 +205,7 @@ msgstr "PLS режим"
 msgid "Pilot"
 msgstr "Пилот"
 
-msgid "Polarisation"
+msgid "Polarization"
 msgstr "Поляризация"
 
 msgid "Position"
