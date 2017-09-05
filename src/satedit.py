@@ -23,7 +23,7 @@ import thread
 import urllib2
 import xml.etree.cElementTree
 
-currversion = '2.4'
+currversion = '2.5'
 
 need_update = False
 
@@ -797,7 +797,9 @@ class TranspondersEditor(Screen):
         self.close(None)
 
     def compareColumn(self, a):
-        return int(a.get(self.row[self.currentSelectedColumn][0], '-1'))
+        map = {'System':'system', 'Freq.':'frequency', 'Pol.':'polarization', 'SR':'symbol_rate', 'FEC':'fec_inner', 'Modul.':'modulation', 'Rolloff':'rolloff', 'Invers.':'inversion', 'Pilot':'pilot', 'IS ID':'is_id', 'PLS Mode':'pls_mode', 'PLS Code':'pls_code', 'TSID':'tsid', 'ONID': 'onid'}
+        cur = map[self.row[self.currentSelectedColumn][0]]
+        return int(a.get(cur, '-1'))
 
     def sortColumn(self):
         rev = self.row[self.currentSelectedColumn][2]
