@@ -23,7 +23,7 @@ class build_trans(cmd.Command):
 				if lang.endswith('.po'):
 					src = os.path.join(s, lang)
 					lang = lang[:-3]
-					destdir = os.path.join('build', 'lib', 'Extensions',
+					destdir = os.path.join('build', 'lib', 'SystemPlugins',
 						'TSsatEditor', 'locale', lang, 'LC_MESSAGES')
 					if not os.path.exists(destdir):
 						os.makedirs(destdir)
