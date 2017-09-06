@@ -1,0 +1,305 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: BUG-EMAIL-ADDR <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: yyyy-mm-dd hh:mm+0000\n"
+"PO-Revision-Date: 2017-09-06 00:14+0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.3\n"
+"Last-Translator: MCelliot_g <mcelliot_g@hotmail.com>\n"
+"Language: el\n"
+
+#: plugin.py:17 satedit.py:1468
+msgid "Select action:"
+msgstr "Επιλογή ενέργειας:"
+
+#: plugin.py:19
+msgid "Open user '/etc/enigma2/satellites.xml'"
+msgstr "Άνοιγμα του αρχείου χρήστη '/etc/enigma2/satellites.xml'"
+
+#: plugin.py:20
+msgid "Disable user '/etc/enigma2/satellites.xml'"
+msgstr "Απενεργοποίηση του αρχείου χρήστη '/etc/enigma2/satellites.xml'"
+
+#: plugin.py:21
+msgid "Remove user '/etc/enigma2/satellites.xml'"
+msgstr "Αφαίρεση του αρχείου χρήστη '/etc/enigma2/satellites.xml'"
+
+#: plugin.py:24 plugin.py:61
+msgid "Create user '/etc/enigma2/satellites.xml'"
+msgstr "Δημιουργία αρχείου χρήστη '/etc/enigma2/satellites.xml'"
+
+#: plugin.py:25
+msgid "Create user '/etc/enigma2/satellites.xml' (use default)"
+msgstr "Δημιουργία αρχείου χρήστη '/etc/enigma2/satellites.xml' (χρήση προεπιλεγμένου)"
+
+#: plugin.py:27
+msgid "Enable user '/etc/enigma2/satellites.xml'"
+msgstr "Ενεργοποίηση του αρχείου χρήστη '/etc/enigma2/satellites.xml'"
+
+#: plugin.py:30
+msgid "Remove user '/etc/enigma2/terrestrial.xml'"
+msgstr "Αφαίρεση του αρχείου χρήστη '/etc/enigma2/terrestrial.xml'"
+
+#: plugin.py:32 plugin.py:67
+msgid "Create user '/etc/enigma2/terrestrial.xml'"
+msgstr "Δημιουργία αρχείου χρήστη '/etc/enigma2/terrestrial.xml'"
+
+#: plugin.py:35
+msgid "Remove user '/etc/enigma2/cables.xml'"
+msgstr "Αφαίρεση του αρχείου χρήστη '/etc/enigma2/cables.xml'"
+
+#: plugin.py:37 plugin.py:73
+msgid "Create user '/etc/enigma2/cables.xml'"
+msgstr "Δημιουργία αρχείου χρήστη '/etc/enigma2/cables.xml'"
+
+#: plugin.py:81
+msgid "Restart the GUI now?"
+msgstr "Να γίνει επανεκκίνηση του GUI τώρα;"
+
+#: plugin.py:89
+msgid "TS-Satellites Editor"
+msgstr "TS-Επεξεργασία Δορυφόρων"
+
+#: plugin.py:94
+msgid "User satellites.xml"
+msgstr "Αρχείο χρήστη satellites.xml"
+
+#: satedit.py:467 satedit.py:903
+msgid "Close"
+msgstr "Κλείσιμο"
+
+#: satedit.py:468 satedit.py:904
+msgid "OK"
+msgstr "OK"
+
+#: satedit.py:479
+msgid "Edit transponder"
+msgstr "Επεξεργασία αναμεταδότη"
+
+#: satedit.py:481
+msgid "Add transponder"
+msgstr "Προσθήκη αναμεταδότη"
+
+#: satedit.py:484
+msgid "DVB-S"
+msgstr "DVB-S"
+
+#: satedit.py:484
+msgid "DVB-S2"
+msgstr "DVB-S2"
+
+#: satedit.py:486 satedit.py:1274
+msgid "horizontal"
+msgstr "οριζόντια"
+
+#: satedit.py:487 satedit.py:1275
+msgid "vertical"
+msgstr "κάθετη"
+
+#: satedit.py:488 satedit.py:1276
+msgid "circular left"
+msgstr "αριστερόστροφη"
+
+#: satedit.py:489 satedit.py:1277
+msgid "circular right"
+msgstr "δεξιόστροφη"
+
+#: satedit.py:529
+msgid "System"
+msgstr "Σύστημα"
+
+#: satedit.py:531
+msgid "Frequency"
+msgstr "Συχνότητα"
+
+#: satedit.py:532
+msgid "Polarization"
+msgstr "Πόλωση"
+
+#: satedit.py:533
+msgid "Symbolrate"
+msgstr "Ρυθμός συμβόλων"
+
+#: satedit.py:535 satedit.py:537
+msgid "FEC"
+msgstr "FEC"
+
+#: satedit.py:539
+msgid "Inversion"
+msgstr "Αναστροφή"
+
+#: satedit.py:541
+msgid "Modulation"
+msgstr "Διαμόρφωση"
+
+#: satedit.py:542
+msgid "RollOff"
+msgstr "RollOff"
+
+#: satedit.py:543
+msgid "Pilot"
+msgstr "Πιλότος"
+
+#: satedit.py:546
+msgid "Use multistream"
+msgstr "Χρήση multistream"
+
+#: satedit.py:548
+msgid "Input Stream ID"
+msgstr "ID Ροής Εισόδου"
+
+#: satedit.py:549
+msgid "PLS Mode"
+msgstr "PLS Λειτουργία"
+
+#: satedit.py:550
+msgid "PLS Code"
+msgstr "PLS Κωδικός"
+
+#: satedit.py:551
+msgid "Use tsid"
+msgstr "Χρήση tsid"
+
+#: satedit.py:553
+msgid "TSID"
+msgstr "TSID"
+
+#: satedit.py:554
+msgid "Use onid"
+msgstr "Χρήση onid"
+
+#: satedit.py:556
+msgid "ONID"
+msgstr "ONID"
+
+#: satedit.py:640 satedit.py:1042
+msgid "Remove"
+msgstr "Διαγραφή"
+
+#: satedit.py:641 satedit.py:1043
+msgid "Edit"
+msgstr "Επεξεργασία"
+
+#: satedit.py:642 satedit.py:1044
+msgid "Add"
+msgstr "Προσθήκη"
+
+#: satedit.py:643 satedit.py:1045
+msgid "Sort"
+msgstr "Ταξινόμηση"
+
+#: satedit.py:667
+#, python-format
+msgid "Transponders Editor (%s)"
+msgstr "Επεξεργασία Αναμεταδοτών (%s)"
+
+#: satedit.py:785
+msgid "Remove transponder?"
+msgstr "Αφαίρεση αναμεταδότη;"
+
+#: satedit.py:913
+msgid "Edit "
+msgstr "Επεξεργασία "
+
+#: satedit.py:914
+msgid "Clone current "
+msgstr "Κλωνοποίηση τρέχοντος "
+
+#: satedit.py:915
+msgid "Add "
+msgstr "Προσθήκη "
+
+#: satedit.py:932
+msgid "Name"
+msgstr "Όνομα"
+
+#: satedit.py:933 satedit.py:1080
+msgid "Position"
+msgstr "Θέση"
+
+#: satedit.py:934
+msgid "Orientation"
+msgstr "Προσανατολισμός"
+
+#: satedit.py:935
+msgid "Network scan"
+msgstr "Ανίχνευση δικτύου"
+
+#: satedit.py:936
+msgid "BAT"
+msgstr "BAT"
+
+#: satedit.py:937
+msgid "ONIT"
+msgstr "ONIT"
+
+#: satedit.py:956
+msgid "Sorry, you can not use prime meridian."
+msgstr "Λυπούμαστε, δεν είναι δυνατή η χρήση του πρώτου μεσημβρινού."
+
+#: satedit.py:966
+msgid ""
+"This position number is busy.\n"
+"Select another position."
+msgstr ""
+"Αυτή η θέση είναι κατειλημμένη.\n"
+"Παρακαλώ επιλέξτε άλλη."
+
+#: satedit.py:1080
+msgid "Satellites"
+msgstr "Δορυφόροι"
+
+#: satedit.py:1086
+#, python-format
+msgid "TS-Satellites Editor:%s"
+msgstr "TS-Επεξεργασία Δορυφόρων:%s"
+
+#: satedit.py:1469
+msgid "Add new"
+msgstr "Προσθήκη νέου"
+
+#: satedit.py:1472
+msgid "Clone current"
+msgstr "Κλωνοποίηση τρέχοντος"
+
+#: satedit.py:1548
+#, python-format
+msgid "Remove satellite %s?"
+msgstr "Αφαίρεση δορυφόρου %s?"
+
+#: satedit.py:1575
+msgid ""
+"Save new /etc/enigma2/satellites.xml? \n"
+"(This take some seconds.)"
+msgstr ""
+"Αποθήκευση νέου /etc/enigma2/satellites.xml; \n"
+"(Αυτό μπορεί να πάρει μερικά δευτερόλεπτα.)"
+
+#: satedit.py:1600
+msgid ""
+"Autor original code mfaraj57\n"
+"Further development Dimitrij openPLi"
+msgstr ""
+"Αρχικός κώδικας από τον mfaraj57\n"
+"Περαιτέρω ανάπτυξη από τον Dimitrij openPLi"
+
+#: satedit.py:1606
+msgid "Select action for blindscan.xml:"
+msgstr "Επιλογή ενέργειας για το blindscan.xml:"
+
+#: satedit.py:1607 satedit.py:1611
+msgid "Show blindscan.xml"
+msgstr "Εμφάνιση blindscan.xml"
+
+#: satedit.py:1607
+msgid "Add in user satellites.xml"
+msgstr "Προσθήκη στο αρχείο χρήστη satellites.xml"
