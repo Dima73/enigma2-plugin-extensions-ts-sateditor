@@ -678,7 +678,7 @@ class TranspondersEditor(Screen):
             self['head'].l.setSelectionClip(eRect(data[1], data[0], data[3], data[4]), True)
             self.updateSelection()
         except:
-            pass
+            self.close(None)
 
     def updateSelection(self):
         row = self['list'].l.getCurrentSelection()
@@ -774,9 +774,12 @@ class TranspondersEditor(Screen):
     def finishedTransponderAdd(self, result):
         if result is None:
             return
+        try:
+            self.transponderslist.append(result)
+        except:
+            return
         global need_update
         need_update = True
-        self.transponderslist.append(result)
         self['list'].setEntries(self.transponderslist)
 
     def removeTransponder(self):
