@@ -23,7 +23,7 @@ import thread
 import urllib2
 import xml.etree.cElementTree
 
-currversion = '2.5'
+currversion = '2.6'
 
 need_update = False
 
