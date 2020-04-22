@@ -7,6 +7,7 @@ from Screens.Console import Console
 from Screens.Standby import TryQuitMainloop
 from Screens.MessageBox import MessageBox
 from Tools.BoundFunction import boundFunction
+from Components.config import config
 import satedit
 import os
 
@@ -25,6 +26,10 @@ def SatellitesEditorMain(session, **kwargs):
 			menu.append((_("Create user '/etc/enigma2/satellites.xml' (use default)"), "createdefault"))
 		else:
 			menu.append((_("Enable user '/etc/enigma2/satellites.xml'"), "enable"))
+	if config.misc.tssateditorT2MI.value:
+		menu.append((_("Use TSID/ONID"), "t2mi"))
+	else:
+		menu.append((_("Use T2MI PLP"), "t2mi"))
 	if nimmanager.hasNimType('DVB-T'):
 		if fileExists('/etc/enigma2/terrestrial.xml'):
 			menu.append((_("Remove user '/etc/enigma2/terrestrial.xml'"), "removedvbt"))
@@ -72,6 +77,10 @@ def SatellitesEditorMain(session, **kwargs):
 					cmd = "%s dvbc" % loadScript
 					text = _("Create user '/etc/enigma2/cables.xml'")
 					session.openWithCallback(boundFunction(restartGui, session), Console, text, [cmd])
+				elif choice[1] == "t2mi":
+					restart = False
+					config.misc.tssateditorT2MI.value = not config.misc.tssateditorT2MI.value
+					config.misc.tssateditorT2MI.save() 
 				if restart:
 					restartGui(session)
 		session.openWithCallback(boxAction, ChoiceBox, title=text, list=menu)
