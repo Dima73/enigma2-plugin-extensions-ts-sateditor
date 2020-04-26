@@ -1,0 +1,352 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2020-04-26 17:28+0300\n"
+"Last-Translator: Yarecki <yaro23@wp.pl>\n"
+"Language-Team: LANGUAGE <yaro23@wp.pl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"Language: pl\n"
+"POT-Creation-Date: \n"
+
+msgid "0.20"
+msgstr "0.20"
+
+msgid "0.25"
+msgstr "0.25"
+
+msgid "0.35"
+msgstr "0.35"
+
+msgid "1"
+msgstr "1"
+
+msgid "1/2"
+msgstr "1/2"
+
+msgid "10"
+msgstr "10"
+
+msgid "11"
+msgstr "11"
+
+msgid "16APSK"
+msgstr "16APSK"
+
+msgid "2"
+msgstr "2"
+
+msgid "2/3"
+msgstr "2/3"
+
+msgid "3"
+msgstr "3"
+
+msgid "3/4"
+msgstr "3/4"
+
+msgid "3/5"
+msgstr "3/5"
+
+msgid "32APSK"
+msgstr "32APSK"
+
+msgid "4"
+msgstr "4"
+
+msgid "4/5"
+msgstr "4/5"
+
+msgid "5"
+msgstr "5"
+
+msgid "5/6"
+msgstr "5/6"
+
+msgid "6"
+msgstr "6"
+
+msgid "6/7"
+msgstr "6/7"
+
+msgid "7"
+msgstr "7"
+
+msgid "7/8"
+msgstr "7/8"
+
+msgid "8"
+msgstr "8"
+
+msgid "8/9"
+msgstr "8/9"
+
+msgid "8PSK"
+msgstr "8PSK"
+
+msgid "9"
+msgstr "9"
+
+msgid "9/10"
+msgstr "9/10"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Add "
+msgstr "Dodaj "
+
+msgid "Add in user satellites.xml"
+msgstr "Dodaj użytkownika satellites.xml"
+
+msgid "Add new"
+msgstr "Dodaj nowy"
+
+msgid "Add transponder"
+msgstr "Dodaj transponder"
+
+msgid ""
+"Autor original code mfaraj57\n"
+"Further development Dimitrij openPLi"
+msgstr ""
+"Autor oryginalnego kodu mfaraj57\n"
+"Dalszy rozwój Dimitrij openPLi"
+
+msgid "BAT"
+msgstr "BAT"
+
+msgid "Band"
+msgstr "Pasmo"
+
+msgid "Clone current"
+msgstr "Klonowanie obenego"
+
+msgid "Clone current "
+msgstr "Klonowanie obecnego "
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Create user '/etc/enigma2/cables.xml'"
+msgstr "Utwórz użytkownika '/etc/enigma2/cables.xml'"
+
+msgid "Create user '/etc/enigma2/satellites.xml'"
+msgstr "Utwórz użytkownika '/etc/enigma2/satellites.xml'"
+
+msgid "Create user '/etc/enigma2/satellites.xml' (use default)"
+msgstr "Utwórz użytkownika '/etc/enigma2/satellites.xml' (взять дефолтный)"
+
+msgid "Create user '/etc/enigma2/terrestrial.xml'"
+msgstr "Utwórz użytkownika '/etc/enigma2/terrestrial.xml'"
+
+msgid "DVB-S"
+msgstr "DVB-S"
+
+msgid "DVB-S2"
+msgstr "DVB-S2"
+
+msgid "Disable user '/etc/enigma2/satellites.xml'"
+msgstr "Wyłacz użytkownika '/etc/enigma2/satellites.xml'"
+
+msgid "East"
+msgstr "Wschód"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "Edit "
+msgstr "Edytuj "
+
+msgid "Edit transponder"
+msgstr "Edycja transpondera"
+
+msgid "Enable user '/etc/enigma2/satellites.xml'"
+msgstr "Włacz uzytkownika '/etc/enigma2/satellites.xml'"
+
+msgid "FEC"
+msgstr "FEC"
+
+msgid "Freq."
+msgstr "Częst."
+
+msgid "Frequency"
+msgstr "Częstotliwość"
+
+msgid "IS ID"
+msgstr "IS ID"
+
+msgid "Input Stream ID"
+msgstr "Strumień wejściowy ID"
+
+msgid "Invers."
+msgstr "Inwers."
+
+msgid "Inversion"
+msgstr "Inwersja"
+
+msgid "Modul."
+msgstr "Modul."
+
+msgid "Modulation"
+msgstr "Modulacja"
+
+msgid "Name"
+msgstr "Nazwa"
+
+msgid "Network scan"
+msgstr "Skanowanie sieci"
+
+msgid "OK"
+msgstr "ОK"
+
+msgid "ONID"
+msgstr "ONID"
+
+msgid "ONIT"
+msgstr "ONIT"
+
+msgid "Open user '/etc/enigma2/satellites.xml'"
+msgstr "Otwórz uzytkownika '/etc/enigma2/satellites.xml'"
+
+msgid "Orientation"
+msgstr "Orientacja"
+
+msgid "PLS Code"
+msgstr "PLS Kod"
+
+msgid "PLS Mode"
+msgstr "PLS Tryb"
+
+msgid "Pilot"
+msgstr "Pilot"
+
+msgid "Pol."
+msgstr "Pol."
+
+msgid "Polarization"
+msgstr "Polaryzacja"
+
+msgid "Position"
+msgstr "Pozycja"
+
+msgid "QAM16"
+msgstr "QAM16"
+
+msgid "QPSK"
+msgstr "QPSK"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Remove satellite %s?"
+msgstr "Usunać satelitę %s?"
+
+msgid "Remove transponder?"
+msgstr "Usunąć transponder?"
+
+msgid "Remove user '/etc/enigma2/cables.xml'"
+msgstr "Usuń uzytkownika '/etc/enigma2/cables.xml'"
+
+msgid "Remove user '/etc/enigma2/satellites.xml'"
+msgstr "Usuń uzytkownika '/etc/enigma2/satellites.xml"
+
+msgid "Remove user '/etc/enigma2/terrestrial.xml'"
+msgstr "Usuń uzytkownika '/etc/enigma2/terrestrial.xml"
+
+msgid "Restart the GUI now?"
+msgstr "Zrestartować GUI teraz?"
+
+msgid "RollOff"
+msgstr "Roll-Off"
+
+msgid "Rolloff"
+msgstr "Roll-Off"
+
+msgid "SR"
+msgstr "Przep."
+
+msgid "Satellites"
+msgstr "Satelity"
+
+msgid ""
+"Save new /etc/enigma2/satellites.xml? \n"
+"(This take some seconds.)"
+msgstr ""
+"Zapisz nowy /etc/enigma2/satellites.xml? \n"
+"(To zajmie kilka sekund.)"
+
+msgid "Select action for blindscan.xml:"
+msgstr "Wybierz akcję do blindscan.xml:"
+
+msgid "Select action:"
+msgstr "Wybierz akcję:"
+
+msgid "Show blindscan.xml"
+msgstr "Pokaż blindscan.xml"
+
+msgid "Sorry, you can not use prime meridian."
+msgstr "Przepraszamy, nie możesz użyć głównego południka."
+
+msgid "Sort"
+msgstr "Sortowanie"
+
+msgid "Symbolrate"
+msgstr "Przepływ"
+
+msgid "System"
+msgstr "System"
+
+msgid "TS-Satellites Editor"
+msgstr "Edytor satelit"
+
+msgid "TS-Satellites Editor:%s"
+msgstr "Edytor satelit:%s"
+
+msgid "TSID"
+msgstr "TSID"
+
+msgid ""
+"This position number is busy.\n"
+"Select another position."
+msgstr ""
+"Ten numer pozycji jest zajęty.\n"
+"Wybierz inną pozycję."
+
+msgid "Transponders Editor (%s)"
+msgstr "Edycja Transpondera (%s)"
+
+msgid "Use T2MI PLP"
+msgstr "Użyj T2MI PLP"
+
+msgid "Use TSID/ONID"
+msgstr "Użyj TSID/ONID"
+
+msgid "Use multistream"
+msgstr "Użyj wielostrumieniowego"
+
+msgid "Use onid"
+msgstr "Użyj ONID"
+
+msgid "Use tsid"
+msgstr "Użyj TSID"
+
+msgid "User satellites.xml"
+msgstr "Użytkownika satellites.xml"
+
+msgid "West"
+msgstr "Zachód"
+
+msgid "circular left"
+msgstr "Kołowa Lewa (CL)"
+
+msgid "circular right"
+msgstr "Kołowa Prawa (CR)"
+
+msgid "horizontal"
+msgstr "Pozioma (H)"
+
+msgid "vertical"
+msgstr "Pionowa (V)"

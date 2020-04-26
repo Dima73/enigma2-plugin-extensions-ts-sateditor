@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-16 20:28+0300\n"
+"POT-Creation-Date: 2020-04-26 17:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,279 +17,291 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: satedit.py:665 satedit.py:1042
+#: satedit.py:691 satedit.py:1116
 msgid "Add"
 msgstr ""
 
-#: satedit.py:922
+#: satedit.py:987
 msgid "Add "
 msgstr ""
 
-#: satedit.py:1604
+#: satedit.py:1679
 msgid "Add in user satellites.xml"
 msgstr ""
 
-#: satedit.py:1466
+#: satedit.py:1541
 msgid "Add new"
 msgstr ""
 
-#: satedit.py:521
+#: satedit.py:516
 msgid "Add transponder"
 msgstr ""
 
-#: satedit.py:1597
+#: satedit.py:1672
 msgid ""
 "Autor original code mfaraj57\n"
 "Further development Dimitrij openPLi"
 msgstr ""
 
-#: satedit.py:943
+#: satedit.py:1008
 msgid "BAT"
 msgstr ""
 
-#: satedit.py:1469
+#: satedit.py:1544
 msgid "Clone current"
 msgstr ""
 
-#: satedit.py:921
+#: satedit.py:986
 msgid "Clone current "
 msgstr ""
 
-#: satedit.py:507 satedit.py:910
+#: satedit.py:502 satedit.py:975
 msgid "Close"
 msgstr ""
 
-#: plugin.py:37 plugin.py:73
+#: plugin.py:42 plugin.py:78
 msgid "Create user '/etc/enigma2/cables.xml'"
 msgstr ""
 
-#: plugin.py:24 plugin.py:61
+#: plugin.py:25 plugin.py:66
 msgid "Create user '/etc/enigma2/satellites.xml'"
 msgstr ""
 
-#: plugin.py:25
+#: plugin.py:26
 msgid "Create user '/etc/enigma2/satellites.xml' (use default)"
 msgstr ""
 
-#: plugin.py:32 plugin.py:67
+#: plugin.py:37 plugin.py:72
 msgid "Create user '/etc/enigma2/terrestrial.xml'"
 msgstr ""
 
-#: satedit.py:524
+#: satedit.py:519
 msgid "DVB-S"
 msgstr ""
 
-#: satedit.py:524
+#: satedit.py:519
 msgid "DVB-S2"
 msgstr ""
 
-#: plugin.py:20
+#: plugin.py:21
 msgid "Disable user '/etc/enigma2/satellites.xml'"
 msgstr ""
 
-#: satedit.py:664 satedit.py:1041
+#: satedit.py:690 satedit.py:1115
 msgid "Edit"
 msgstr ""
 
-#: satedit.py:920
+#: satedit.py:985
 msgid "Edit "
 msgstr ""
 
-#: satedit.py:519
+#: satedit.py:514
 msgid "Edit transponder"
 msgstr ""
 
-#: plugin.py:27
+#: plugin.py:28
 msgid "Enable user '/etc/enigma2/satellites.xml'"
 msgstr ""
 
-#: satedit.py:571 satedit.py:573
+#: satedit.py:573 satedit.py:575
 msgid "FEC"
 msgstr ""
 
-#: satedit.py:567
+#: satedit.py:569
 msgid "Frequency"
 msgstr ""
 
-#: satedit.py:575
-msgid "Inversion"
+#: satedit.py:586
+msgid "Input Stream ID"
 msgstr ""
 
 #: satedit.py:577
-msgid "Modulation"
-msgstr ""
-
-#: satedit.py:939
-msgid "Name"
-msgstr ""
-
-#: satedit.py:942
-msgid "Network scan"
-msgstr ""
-
-#: satedit.py:508 satedit.py:911
-msgid "OK"
-msgstr ""
-
-#: satedit.py:586
-msgid "ONID"
-msgstr ""
-
-#: satedit.py:944
-msgid "ONIT"
-msgstr ""
-
-#: plugin.py:19
-msgid "Open user '/etc/enigma2/satellites.xml'"
-msgstr ""
-
-#: satedit.py:941
-msgid "Orientation"
+msgid "Inversion"
 msgstr ""
 
 #: satedit.py:579
+msgid "Modulation"
+msgstr ""
+
+#: satedit.py:1004
+msgid "Name"
+msgstr ""
+
+#: satedit.py:1007
+msgid "Network scan"
+msgstr ""
+
+#: satedit.py:503 satedit.py:976
+msgid "OK"
+msgstr ""
+
+#: satedit.py:601
+msgid "ONID"
+msgstr ""
+
+#: satedit.py:1009
+msgid "ONIT"
+msgstr ""
+
+#: plugin.py:20
+msgid "Open user '/etc/enigma2/satellites.xml'"
+msgstr ""
+
+#: satedit.py:1006
+msgid "Orientation"
+msgstr ""
+
+#: satedit.py:588
+msgid "PLS Code"
+msgstr ""
+
+#: satedit.py:587
+msgid "PLS Mode"
+msgstr ""
+
+#: satedit.py:581
 msgid "Pilot"
 msgstr ""
 
-#: satedit.py:568
+#: satedit.py:570
 msgid "Polarization"
 msgstr ""
 
-#: satedit.py:940 satedit.py:1066
+#: satedit.py:1005 satedit.py:1152
 msgid "Position"
 msgstr ""
 
-#: satedit.py:663 satedit.py:1040
+#: satedit.py:689 satedit.py:1114
 msgid "Remove"
 msgstr ""
 
-#: satedit.py:1545
+#: satedit.py:1620
 #, python-format
 msgid "Remove satellite %s?"
 msgstr ""
 
-#: satedit.py:806
+#: satedit.py:852
 msgid "Remove transponder?"
 msgstr ""
 
-#: plugin.py:35
+#: plugin.py:40
 msgid "Remove user '/etc/enigma2/cables.xml'"
 msgstr ""
 
-#: plugin.py:21
+#: plugin.py:22
 msgid "Remove user '/etc/enigma2/satellites.xml'"
 msgstr ""
 
-#: plugin.py:30
+#: plugin.py:35
 msgid "Remove user '/etc/enigma2/terrestrial.xml'"
 msgstr ""
 
-#: plugin.py:81
+#: plugin.py:90
 msgid "Restart the GUI now?"
 msgstr ""
 
-#: satedit.py:578
+#: satedit.py:580
 msgid "RollOff"
 msgstr ""
 
-#: satedit.py:1066
+#: satedit.py:1152
 msgid "Satellites"
 msgstr ""
 
-#: satedit.py:1572
+#: satedit.py:1647
 msgid ""
 "Save new /etc/enigma2/satellites.xml? \n"
 "(This take some seconds.)"
 msgstr ""
 
-#: satedit.py:1603
+#: satedit.py:1678
 msgid "Select action for blindscan.xml:"
 msgstr ""
 
-#: plugin.py:17 satedit.py:1465
+#: plugin.py:18 satedit.py:1540
 msgid "Select action:"
 msgstr ""
 
-#: satedit.py:1604 satedit.py:1608
+#: satedit.py:1679 satedit.py:1683
 msgid "Show blindscan.xml"
 msgstr ""
 
-#: satedit.py:963
+#: satedit.py:1028
 msgid "Sorry, you can not use prime meridian."
 msgstr ""
 
-#: satedit.py:666 satedit.py:1043
+#: satedit.py:692 satedit.py:1117
 msgid "Sort"
 msgstr ""
 
-#: satedit.py:569
+#: satedit.py:571
 msgid "Symbolrate"
 msgstr ""
 
-#: satedit.py:565
+#: satedit.py:567
 msgid "System"
 msgstr ""
 
-#: plugin.py:89
+#: plugin.py:98
 msgid "TS-Satellites Editor"
 msgstr ""
 
-#: satedit.py:1072
+#: satedit.py:1158
 #, python-format
 msgid "TS-Satellites Editor:%s"
 msgstr ""
 
-#: satedit.py:583
+#: satedit.py:598
 msgid "TSID"
 msgstr ""
 
-#: satedit.py:973
+#: satedit.py:1038
 msgid ""
 "This position number is busy.\n"
 "Select another position."
 msgstr ""
 
-#: satedit.py:688
+#: satedit.py:731
 #, python-format
 msgid "Transponders Editor (%s)"
 msgstr ""
 
+#: plugin.py:32 satedit.py:591
+msgid "Use T2MI PLP"
+msgstr ""
+
+#: plugin.py:30
+msgid "Use TSID/ONID"
+msgstr ""
+
 #: satedit.py:584
-msgid "Use onid"
-msgstr ""
-
-#: satedit.py:581
-msgid "Use tsid"
-msgstr ""
-
-#: plugin.py:94
-msgid "User satellites.xml"
-msgstr ""
-
-#: satedit.py:528 satedit.py:1260
-msgid "circular left"
-msgstr ""
-
-#: satedit.py:529 satedit.py:1261
-msgid "circular right"
-msgstr ""
-
-#: satedit.py:526 satedit.py:1258
-msgid "horizontal"
-msgstr ""
-
-#: satedit.py:527 satedit.py:1259
-msgid "vertical"
-msgstr ""
-
 msgid "Use multistream"
 msgstr ""
 
-msgid "Input Stream ID"
+#: satedit.py:599
+msgid "Use onid"
 msgstr ""
 
-msgid "PLS Mode"
+#: satedit.py:596
+msgid "Use tsid"
 msgstr ""
 
-msgid "PLS Code"
+#: plugin.py:103
+msgid "User satellites.xml"
+msgstr ""
+
+#: satedit.py:523 satedit.py:1348
+msgid "circular left"
+msgstr ""
+
+#: satedit.py:524 satedit.py:1349
+msgid "circular right"
+msgstr ""
+
+#: satedit.py:521 satedit.py:1346
+msgid "horizontal"
+msgstr ""
+
+#: satedit.py:522 satedit.py:1347
+msgid "vertical"
 msgstr ""
