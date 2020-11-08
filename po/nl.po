@@ -1,0 +1,314 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-26 17:33+0300\n"
+"PO-Revision-Date: 2020-11-08 14:38+0100\n"
+"Last-Translator: Frenske <voorzitter@openpli.org>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: satedit.py:691 satedit.py:1116
+msgid "Add"
+msgstr "Toevoegen"
+
+#: satedit.py:987
+msgid "Add "
+msgstr "Toevoegen "
+
+#: satedit.py:1679
+msgid "Add in user satellites.xml"
+msgstr "Voeg in de persoonlijke satellites.xml"
+
+#: satedit.py:1541
+msgid "Add new"
+msgstr "Voeg een nieuwe toe"
+
+#: satedit.py:516
+msgid "Add transponder"
+msgstr "Voeg een transponder toe"
+
+#: satedit.py:1672
+msgid ""
+"Autor original code mfaraj57\n"
+"Further development Dimitrij openPLi"
+msgstr ""
+"Originele auteur code Mfaraj57\n"
+"Verdere ontwikkeling door Dimitrij lid van OpenPLi"
+
+#: satedit.py:1008
+msgid "BAT"
+msgstr "BAT"
+
+#: satedit.py:1544
+msgid "Clone current"
+msgstr "Kloon de huidige"
+
+#: satedit.py:986
+msgid "Clone current "
+msgstr "Kloon de huidige "
+
+#: satedit.py:502 satedit.py:975
+msgid "Close"
+msgstr "Afsluiten"
+
+#: plugin.py:42 plugin.py:78
+msgid "Create user '/etc/enigma2/cables.xml'"
+msgstr "Maak een persoonlijke 'cables.xml'"
+
+#: plugin.py:25 plugin.py:66
+msgid "Create user '/etc/enigma2/satellites.xml'"
+msgstr "Maak een persoonlijke 'satellites.xml'"
+
+#: plugin.py:26
+msgid "Create user '/etc/enigma2/satellites.xml' (use default)"
+msgstr "Maak uw persoonlijke 'satellites.xml' (standaard activeren)"
+
+#: plugin.py:37 plugin.py:72
+msgid "Create user '/etc/enigma2/terrestrial.xml'"
+msgstr "Maak een persoonlijke 'terrestrial.xml'"
+
+#: satedit.py:519
+msgid "DVB-S"
+msgstr "DVB-S"
+
+#: satedit.py:519
+msgid "DVB-S2"
+msgstr "DVB-S2"
+
+#: plugin.py:21
+msgid "Disable user '/etc/enigma2/satellites.xml'"
+msgstr "Déactiveer de persoonlijke 'satellites.xml'"
+
+#: satedit.py:690 satedit.py:1115
+msgid "Edit"
+msgstr "Wijzig"
+
+#: satedit.py:985
+msgid "Edit "
+msgstr "Wijzig "
+
+#: satedit.py:514
+msgid "Edit transponder"
+msgstr "Wijzig de transponder"
+
+#: plugin.py:28
+msgid "Enable user '/etc/enigma2/satellites.xml'"
+msgstr "Activeer de persoonlijke satellites.xml"
+
+#: satedit.py:573 satedit.py:575
+msgid "FEC"
+msgstr "FEC"
+
+#: satedit.py:569
+msgid "Frequency"
+msgstr "Frequentie"
+
+#: satedit.py:586
+msgid "Input Stream ID"
+msgstr "Ingangsstream ID"
+
+#: satedit.py:577
+msgid "Inversion"
+msgstr "Inversie"
+
+#: satedit.py:579
+msgid "Modulation"
+msgstr "Modulatie"
+
+#: satedit.py:1004
+msgid "Name"
+msgstr "Naam"
+
+#: satedit.py:1007
+msgid "Network scan"
+msgstr "Netwerkscan"
+
+#: satedit.py:503 satedit.py:976
+msgid "OK"
+msgstr "Ok"
+
+#: satedit.py:601
+msgid "ONID"
+msgstr "ONID"
+
+#: satedit.py:1009
+msgid "ONIT"
+msgstr "ONIT"
+
+#: plugin.py:20
+msgid "Open user '/etc/enigma2/satellites.xml'"
+msgstr "Open de de persoonlijke satellites.xml"
+
+#: satedit.py:1006
+msgid "Orientation"
+msgstr "Orientatie"
+
+#: satedit.py:588
+msgid "PLS Code"
+msgstr "PLS Code"
+
+#: satedit.py:587
+msgid "PLS Mode"
+msgstr "PLS modus"
+
+#: satedit.py:581
+msgid "Pilot"
+msgstr "Test"
+
+#: satedit.py:570
+msgid "Polarization"
+msgstr "Polarisatie"
+
+#: satedit.py:1005 satedit.py:1152
+msgid "Position"
+msgstr "Positie"
+
+#: satedit.py:689 satedit.py:1114
+msgid "Remove"
+msgstr "Verwijder"
+
+#: satedit.py:1620
+#, python-format
+msgid "Remove satellite %s?"
+msgstr "Verwijder de satelliet %s?"
+
+#: satedit.py:852
+msgid "Remove transponder?"
+msgstr "Verwijder de transponder?"
+
+#: plugin.py:40
+msgid "Remove user '/etc/enigma2/cables.xml'"
+msgstr "Verwijder de persoonlijke 'cables.xml'"
+
+#: plugin.py:22
+msgid "Remove user '/etc/enigma2/satellites.xml'"
+msgstr "Verwijder de persoonlijke 'satellites.xml'"
+
+#: plugin.py:35
+msgid "Remove user '/etc/enigma2/terrestrial.xml'"
+msgstr "Verwijder de persoonlijke 'terrestrial.xml'"
+
+#: plugin.py:90
+msgid "Restart the GUI now?"
+msgstr "Herstart Enigma nu?"
+
+#: satedit.py:580
+msgid "RollOff"
+msgstr "Rolloff"
+
+#: satedit.py:1152
+msgid "Satellites"
+msgstr "Satellieten"
+
+#: satedit.py:1647
+msgid ""
+"Save new /etc/enigma2/satellites.xml? \n"
+"(This take some seconds.)"
+msgstr ""
+"Moet de nieuwe opgeslagen worden?\n"
+"(Dit duurt enkele seconden.)"
+
+#: satedit.py:1678
+msgid "Select action for blindscan.xml:"
+msgstr "Maak uw keuze t.b.v. de blindscan.xml:"
+
+#: plugin.py:18 satedit.py:1540
+msgid "Select action:"
+msgstr "Maak uw selectie:"
+
+#: satedit.py:1679 satedit.py:1683
+msgid "Show blindscan.xml"
+msgstr "Toon de blindscan.xml"
+
+#: satedit.py:1028
+msgid "Sorry, you can not use prime meridian."
+msgstr "Sorry, je kunt de nulmeridiaan niet gebruiken."
+
+#: satedit.py:692 satedit.py:1117
+msgid "Sort"
+msgstr "Sorteer"
+
+#: satedit.py:571
+msgid "Symbolrate"
+msgstr "Symboolwaarde"
+
+#: satedit.py:567
+msgid "System"
+msgstr "Systeem"
+
+#: plugin.py:98
+msgid "TS-Satellites Editor"
+msgstr "TS-Satelliet Editor"
+
+#: satedit.py:1158
+#, python-format
+msgid "TS-Satellites Editor:%s"
+msgstr "TS-Satelliet Editor: %s"
+
+#: satedit.py:598
+msgid "TSID"
+msgstr "TSID"
+
+#: satedit.py:1038
+msgid ""
+"This position number is busy.\n"
+"Select another position."
+msgstr ""
+"Dit positie is actief.\n"
+"Kies een andere positie."
+
+#: satedit.py:731
+#, python-format
+msgid "Transponders Editor (%s)"
+msgstr "Transponders Editor (%s)"
+
+#: plugin.py:32 satedit.py:591
+msgid "Use T2MI PLP"
+msgstr "Gebruik T2MI PLP"
+
+#: plugin.py:30
+msgid "Use TSID/ONID"
+msgstr "Gebruik TSID/ONID"
+
+#: satedit.py:584
+msgid "Use multistream"
+msgstr "Gebruik Multistream"
+
+#: satedit.py:599
+msgid "Use onid"
+msgstr "Gebruik onid"
+
+#: satedit.py:596
+msgid "Use tsid"
+msgstr "Gebruik tsid"
+
+#: plugin.py:103
+msgid "User satellites.xml"
+msgstr "Gebruik de satellites.xml"
+
+#: satedit.py:523 satedit.py:1348
+msgid "circular left"
+msgstr "circulair links"
+
+#: satedit.py:524 satedit.py:1349
+msgid "circular right"
+msgstr "circulair rechts"
+
+#: satedit.py:521 satedit.py:1346
+msgid "horizontal"
+msgstr "horizontaal"
+
+#: satedit.py:522 satedit.py:1347
+msgid "vertical"
+msgstr "verticaal"
