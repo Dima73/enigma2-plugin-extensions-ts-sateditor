@@ -19,7 +19,7 @@ from time import time
 import os
 import xml.etree.cElementTree
 
-currversion = " " + "2.7"
+currversion = " " + "2.8"
 
 config.misc.tssateditorT2MI = ConfigYesNo(False)
 
