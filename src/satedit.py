@@ -490,7 +490,7 @@ class TransponderEditor(Screen, ConfigListScreen, Transponder):
 	else:
 		skin = '\n\t\t<screen position="center,center" size="560,400" title="Edit" >\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/red.png" position="0,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/green.png" position="140,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="280,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/blue.png" position="420,0" size="140,40" alphatest="on" />\n\t\t<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />\n\t\t<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />\n\t\t<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />\n\t\t<widget name="config" position="10,50" size="540,325" scrollbarMode="showOnDemand" />\n\t\t</screen>'
 
-	def __init__(self, session, transponderData = None):
+	def __init__(self, session, transponderData=None):
 		self.skin = TransponderEditor.skin
 		Screen.__init__(self, session)
 		Transponder.__init__(self, transponderData)
@@ -661,7 +661,7 @@ class TranspondersEditor(Screen):
 	else:
 		skin = '\n\t\t<screen position="center,center" size="585,430" title="Transponders Editor" >\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/red.png" position="0,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/green.png" position="140,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="280,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/blue.png" position="420,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/ok.png" position="540,5" size="35,35" alphatest="on"	zPosition="2" />\n\t\t<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />\n\t\t<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />\n\t\t<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />\n\t\t<widget name="list" position="0,64" size="585,335" scrollbarMode="showOnDemand" />\n\t\t<widget name="head" position="0,30" size="585,34" scrollbarMode="showNever" />\n\t\t</screen>'
 
-	def __init__(self, session, satellite = None):
+	def __init__(self, session, satellite=None):
 		self.skin = TranspondersEditor.skin
 		Screen.__init__(self, session)
 		self['actions'] = ActionMap(['SatellitesEditorActions'], {'nextPage': self.nextPage,
@@ -1063,7 +1063,7 @@ class Head(HTMLComponent, GUIComponent):
 	def postWidgetCreate(self, instance):
 		instance.setContent(self.l)
 
-	def setEntries(self, data = None):
+	def setEntries(self, data=None):
 		res = [None]
 		if data is not None:
 			for x in data:
@@ -1661,7 +1661,7 @@ class SatellitesEditor(Screen):
 			pass
 		else:
 			cb_func = lambda ret: not ret or self.writeSatellites()
-			self.session.openWithCallback(cb_func, MessageBox, _('Save new /etc/enigma2/satellites.xml? \n(This take some seconds.)'), MessageBox.TYPE_YESNO, default = False)
+			self.session.openWithCallback(cb_func, MessageBox, _('Save new /etc/enigma2/satellites.xml? \n(This take some seconds.)'), MessageBox.TYPE_YESNO, default=False)
 		self.cleansatellitesxml()
 		global need_update
 		need_update = False

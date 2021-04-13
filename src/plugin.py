@@ -87,7 +87,7 @@ def SatellitesEditorMain(session, **kwargs):
 
 def restartGui(session=None):
 	if session and not session.nav.getRecordings():
-		session.openWithCallback(boundFunction(restartGuiNow, session), MessageBox, _("Restart the GUI now?"), MessageBox.TYPE_YESNO, default = False)
+		session.openWithCallback(boundFunction(restartGuiNow, session), MessageBox, _("Restart the GUI now?"), MessageBox.TYPE_YESNO, default=False)
 
 def restartGuiNow(session, answer):
 	if answer and session:
