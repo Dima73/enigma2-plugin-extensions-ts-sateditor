@@ -867,9 +867,9 @@ class TranspondersEditor(Screen):
 
 	def compareColumn(self, a):
 		if config.misc.tssateditorT2MI.value:
-			map = {'System':'system', 'Freq.':'frequency', 'Pol.':'polarization', 'SR':'symbol_rate', 'FEC':'fec_inner', 'Modul.':'modulation', 'Rolloff':'rolloff', 'Invers.':'inversion', 'Pilot':'pilot', 'IS ID':'is_id', 'PLS Mode':'pls_mode', 'PLS Code':'pls_code', 'T2MI ID':'t2mi_plp_id', 'T2MI PID': 't2mi_pid'}
+			map = {'System': 'system', 'Freq.': 'frequency', 'Pol.': 'polarization', 'SR': 'symbol_rate', 'FEC': 'fec_inner', 'Modul.': 'modulation', 'Rolloff': 'rolloff', 'Invers.': 'inversion', 'Pilot': 'pilot', 'IS ID': 'is_id', 'PLS Mode': 'pls_mode', 'PLS Code': 'pls_code', 'T2MI ID': 't2mi_plp_id', 'T2MI PID': 't2mi_pid'}
 		else:
-			map = {'System':'system', 'Freq.':'frequency', 'Pol.':'polarization', 'SR':'symbol_rate', 'FEC':'fec_inner', 'Modul.':'modulation', 'Rolloff':'rolloff', 'Invers.':'inversion', 'Pilot':'pilot', 'IS ID':'is_id', 'PLS Mode':'pls_mode', 'PLS Code':'pls_code', 'TSID':'tsid', 'ONID': 'onid'}
+			map = {'System': 'system', 'Freq.': 'frequency', 'Pol.': 'polarization', 'SR': 'symbol_rate', 'FEC': 'fec_inner', 'Modul.': 'modulation', 'Rolloff': 'rolloff', 'Invers.': 'inversion', 'Pilot': 'pilot', 'IS ID': 'is_id', 'PLS Mode': 'pls_mode', 'PLS Code': 'pls_code', 'TSID': 'tsid', 'ONID': 'onid'}
 		cur = map[self.row[self.currentSelectedColumn][0]]
 		return int(a.get(cur, '-1'))
 
@@ -1694,11 +1694,11 @@ class SatellitesEditor(Screen):
 		if not xml:
 			return
 		text = _("Select action for blindscan.xml:")
-		menu = [(_("Show blindscan.xml"), "show"),(_("Add in user satellites.xml"), "add")]
+		menu = [(_("Show blindscan.xml"), "show"), (_("Add in user satellites.xml"), "add")]
 		def addAction(choice):
 			if choice:
 				if choice[1] == "show":
-					self.session.open(Console,_('Show blindscan.xml'),["cat %s" % xml])
+					self.session.open(Console, _('Show blindscan.xml'), ["cat %s" % xml])
 				elif choice[1] == "add":
 					blindscan_satelliteslist = self.readSatellites(xml, stop=False)
 					if blindscan_satelliteslist:
