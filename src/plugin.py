@@ -81,7 +81,7 @@ def SatellitesEditorMain(session, **kwargs):
 				elif choice[1] == "t2mi":
 					restart = False
 					config.misc.tssateditorT2MI.value = not config.misc.tssateditorT2MI.value
-					config.misc.tssateditorT2MI.save() 
+					config.misc.tssateditorT2MI.save()
 				if restart:
 					restartGui(session)
 		session.openWithCallback(boxAction, ChoiceBox, title=text, list=menu)

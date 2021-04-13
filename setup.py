@@ -12,4 +12,3 @@ setup(name='enigma2-plugin-extensions-ts-sateditor',
 		description='manage satellites/transponders for user satellites.xml',
 		cmdclass=setup_translate.cmdclass,
 	)
-

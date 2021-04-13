@@ -1022,7 +1022,7 @@ class SatEditor(Screen, ConfigListScreen):
 
 	def cancel(self):
 		self.close(None)
- 
+
 	def okExit(self):
 		satelliteFlags = 0
 		if self.configSatelliteFlagNetworkScan.value:
@@ -1048,7 +1048,7 @@ class SatEditor(Screen, ConfigListScreen):
 					self.session.open(MessageBox, _('This position number is busy.\nSelect another position.'), MessageBox.TYPE_ERROR)
 					return
 		satelliteData = {'name': self.configSatelliteName.value, 'flags': str(satelliteFlags), 'position': str(satellitePosition)}
-		global need_update 
+		global need_update
 		need_update = True
 		self.close(satelliteData)
 
