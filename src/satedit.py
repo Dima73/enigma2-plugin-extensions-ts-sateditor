@@ -33,6 +33,7 @@ if sz_y >= 1080:
 elif sz_y >= 720 and sz_y <= 1079:
 	HD_Res = True
 
+
 class Transponder():
 	essential = ['frequency', 'polarization', 'symbol_rate']
 	niceToHave = ['system',
@@ -387,6 +388,7 @@ class Transponder():
 		res.update(self.exportImportColor())
 		return res
 
+
 class TransponderList(MenuList):
 
 	def __init__(self):
@@ -482,6 +484,7 @@ class TransponderList(MenuList):
 			res.append(tp)
 
 		self.l.setList(res)
+
 
 class TransponderEditor(Screen, ConfigListScreen, Transponder):
 
@@ -652,6 +655,7 @@ class TransponderEditor(Screen, ConfigListScreen, Transponder):
 				elif x == self.configTransponderUseOnid:
 					self.useOnid = self.configTransponderUseOnid.value
 			self.createSetup()
+
 
 class TranspondersEditor(Screen):
 	if FHD_Res:
@@ -884,6 +888,7 @@ class TranspondersEditor(Screen):
 		global need_update
 		need_update = True
 
+
 class SatelliteList(MenuList):
 
 	def __init__(self):
@@ -935,6 +940,7 @@ class SatelliteList(MenuList):
 			res.append(satentry)
 
 		self.l.setList(res)
+
 
 class SatEditor(Screen, ConfigListScreen):
 	flagNetworkScan = 1
@@ -1046,6 +1052,7 @@ class SatEditor(Screen, ConfigListScreen):
 		need_update = True
 		self.close(satelliteData)
 
+
 class Head(HTMLComponent, GUIComponent):
 	def __init__(self):
 		GUIComponent.__init__(self)
@@ -1073,6 +1080,7 @@ class Head(HTMLComponent, GUIComponent):
 					res.append(MultiContentEntryText(pos=(x[0], 0), size=(x[1], 20), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=x[2], color=12632256, backcolor=625428280, color_sel=16777215, backcolor_sel=627073024, border_width=1, border_color=15792383))
 
 		self.l.setList([res])
+
 
 class SatellitesEditor(Screen):
 	if FHD_Res:
@@ -1553,6 +1561,7 @@ class SatellitesEditor(Screen):
 		cur_idx = self['list'].getSelectedIndex()
 		if cur_idx is not None:
 			menu.append((_("Clone current"), "clone"))
+
 		def addAction(choice):
 			if choice:
 				self.addNewSat = None
@@ -1695,6 +1704,7 @@ class SatellitesEditor(Screen):
 			return
 		text = _("Select action for blindscan.xml:")
 		menu = [(_("Show blindscan.xml"), "show"), (_("Add in user satellites.xml"), "add")]
+
 		def addAction(choice):
 			if choice:
 				if choice[1] == "show":
