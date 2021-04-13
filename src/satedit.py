@@ -829,7 +829,8 @@ class TranspondersEditor(Screen):
 		if result is None:
 			return
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		global need_update
 		need_update = True
 		self.transponderslist[cur_idx] = result
@@ -854,7 +855,8 @@ class TranspondersEditor(Screen):
 	def deleteTransponder(self):
 		if len(self.transponderslist):
 			cur_idx = self['list'].getSelectedIndex()
-			if cur_idx is None: return
+			if cur_idx is None:
+				return
 			global need_update
 			need_update = True
 			self.transponderslist.pop(cur_idx)
@@ -983,8 +985,10 @@ class SatEditor(Screen, ConfigListScreen):
 
 	def layoutFinished(self):
 		text = _('Edit ')
-		if self.clone: text = _('Clone current ')
-		if self.satelliteData is None: text = _('Add ')
+		if self.clone:
+			text = _('Clone current ')
+		if self.satelliteData is None:
+			text = _('Add ')
 		self.setTitle(text + self.satelliteName)
 
 	def createConfig(self):
@@ -1200,41 +1204,47 @@ class SatellitesEditor(Screen):
 
 	def nextPage(self):
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		self['list'].pageUp()
 		self.lastSelectedIndex = cur_idx
 		self.updateSelection()
 
 	def prevPage(self):
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		self['list'].pageDown()
 		self.lastSelectedIndex = cur_idx
 		self.updateSelection()
 
 	def up(self):
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		self['list'].up()
 		self.lastSelectedIndex = cur_idx
 		self.updateSelection()
 
 	def down(self):
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		self['list'].down()
 		self.lastSelectedIndex = cur_idx
 		self.updateSelection()
 
 	def upUp(self):
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		if self.lastSelectedIndex != cur_idx:
 			self.lastSelectedIndex = cur_idx
 
 	def downUp(self):
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		if self.lastSelectedIndex != cur_idx:
 			self.lastSelectedIndex = cur_idx
 
@@ -1248,7 +1258,8 @@ class SatellitesEditor(Screen):
 
 	def getInfo(self):
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		satellite = self.satelliteslist[cur_idx]
 		self.name = satellite[0].get('name')
 		self.position = satellite[0].get('position')
@@ -1568,14 +1579,16 @@ class SatellitesEditor(Screen):
 		if not len(self.satelliteslist):
 			return
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		self.session.openWithCallback(self.finishedTranspondersEdit, TranspondersEditor, self.satelliteslist[cur_idx])
 
 	def finishedTranspondersEdit(self, result):
 		if result is None:
 			return
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		self.satelliteslist[cur_idx][1] = result
 		global need_update
 		need_update = True
@@ -1584,14 +1597,16 @@ class SatellitesEditor(Screen):
 		if not len(self.satelliteslist):
 			return
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		self.session.openWithCallback(self.finishedSatEdit, SatEditor, self.satelliteslist, self.satelliteslist[cur_idx][0])
 
 	def finishedSatEdit(self, result):
 		if result is None:
 			return
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		pos = int(self.satelliteslist[cur_idx][0].get('position', '0'))
 		now_pos = int(result.get('position', '0'))
 		if pos != now_pos:
@@ -1604,7 +1619,8 @@ class SatellitesEditor(Screen):
 	def deleteSatellite(self):
 		if len(self.satelliteslist):
 			cur_idx = self['list'].getSelectedIndex()
-			if cur_idx is None: return
+			if cur_idx is None:
+				return
 			self.satelliteslist.pop(self['list'].getSelectedIndex())
 			self['list'].setEntries(self.satelliteslist)
 			global need_update
@@ -1614,7 +1630,8 @@ class SatellitesEditor(Screen):
 	def removeSatellite(self):
 		if len(self.satelliteslist):
 			cur_idx = self['list'].getSelectedIndex()
-			if cur_idx is None: return
+			if cur_idx is None:
+				return
 			satellite = self.satelliteslist[cur_idx][0].get('name')
 			cb_func = lambda ret: not ret or self.deleteSatellite()
 			self.session.openWithCallback(cb_func, MessageBox, _('Remove satellite %s?' % satellite), MessageBox.TYPE_YESNO)
@@ -1674,7 +1691,8 @@ class SatellitesEditor(Screen):
 	def blihdscanXML(self):
 		self.addNewSat = None
 		xml = self.isBlihdscanXML()
-		if not xml: return
+		if not xml:
+			return
 		text = _("Select action for blindscan.xml:")
 		menu = [(_("Show blindscan.xml"), "show"),(_("Add in user satellites.xml"), "add")]
 		def addAction(choice):
