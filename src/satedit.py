@@ -33,6 +33,7 @@ if sz_y >= 1080:
 elif sz_y >= 720 and sz_y <= 1079:
 	HD_Res = True
 
+
 class Transponder():
 	essential = ['frequency', 'polarization', 'symbol_rate']
 	niceToHave = ['system',
@@ -387,6 +388,7 @@ class Transponder():
 		res.update(self.exportImportColor())
 		return res
 
+
 class TransponderList(MenuList):
 
 	def __init__(self):
@@ -483,6 +485,7 @@ class TransponderList(MenuList):
 
 		self.l.setList(res)
 
+
 class TransponderEditor(Screen, ConfigListScreen, Transponder):
 
 	if FHD_Res:
@@ -490,7 +493,7 @@ class TransponderEditor(Screen, ConfigListScreen, Transponder):
 	else:
 		skin = '\n\t\t<screen position="center,center" size="560,400" title="Edit" >\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/red.png" position="0,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/green.png" position="140,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="280,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/blue.png" position="420,0" size="140,40" alphatest="on" />\n\t\t<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />\n\t\t<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />\n\t\t<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />\n\t\t<widget name="config" position="10,50" size="540,325" scrollbarMode="showOnDemand" />\n\t\t</screen>'
 
-	def __init__(self, session, transponderData = None):
+	def __init__(self, session, transponderData=None):
 		self.skin = TransponderEditor.skin
 		Screen.__init__(self, session)
 		Transponder.__init__(self, transponderData)
@@ -653,6 +656,7 @@ class TransponderEditor(Screen, ConfigListScreen, Transponder):
 					self.useOnid = self.configTransponderUseOnid.value
 			self.createSetup()
 
+
 class TranspondersEditor(Screen):
 	if FHD_Res:
 		skin = '\n\t\t<screen position="center,center" size="1320,800" title="Transponders Editor" >\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/red.png" position="40,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/green.png" position="250,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="470,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/blue.png" position="690,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/ok.png" position="1280,0" size="35,35" alphatest="on" />\n\t\t<widget name="key_red" position="10,0" zPosition="1" size="200,40" font="Regular;23" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />\n\t\t<widget name="key_green" position="220,0" zPosition="1" size="200,40" font="Regular;23" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget name="key_yellow" position="440,0" zPosition="1" size="200,40" font="Regular;23" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />\n\t\t<widget name="key_blue" position="660,0" zPosition="1" size="200,40" font="Regular;23" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />\n\t\t<widget name="list" position="10,100" size="1300,680" scrollbarMode="showOnDemand" />\n\t\t<widget name="head" position="10,45" size="1300,45" scrollbarMode="showNever" />\n\t\t</screen>'
@@ -661,7 +665,7 @@ class TranspondersEditor(Screen):
 	else:
 		skin = '\n\t\t<screen position="center,center" size="585,430" title="Transponders Editor" >\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/red.png" position="0,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/green.png" position="140,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/yellow.png" position="280,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/blue.png" position="420,0" size="140,40" alphatest="on" />\n\t\t<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/ddbuttons/ok.png" position="540,5" size="35,35" alphatest="on"	zPosition="2" />\n\t\t<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />\n\t\t<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />\n\t\t<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />\n\t\t<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />\n\t\t<widget name="list" position="0,64" size="585,335" scrollbarMode="showOnDemand" />\n\t\t<widget name="head" position="0,30" size="585,34" scrollbarMode="showNever" />\n\t\t</screen>'
 
-	def __init__(self, session, satellite = None):
+	def __init__(self, session, satellite=None):
 		self.skin = TranspondersEditor.skin
 		Screen.__init__(self, session)
 		self['actions'] = ActionMap(['SatellitesEditorActions'], {'nextPage': self.nextPage,
@@ -829,7 +833,8 @@ class TranspondersEditor(Screen):
 		if result is None:
 			return
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		global need_update
 		need_update = True
 		self.transponderslist[cur_idx] = result
@@ -854,7 +859,8 @@ class TranspondersEditor(Screen):
 	def deleteTransponder(self):
 		if len(self.transponderslist):
 			cur_idx = self['list'].getSelectedIndex()
-			if cur_idx is None: return
+			if cur_idx is None:
+				return
 			global need_update
 			need_update = True
 			self.transponderslist.pop(cur_idx)
@@ -865,9 +871,9 @@ class TranspondersEditor(Screen):
 
 	def compareColumn(self, a):
 		if config.misc.tssateditorT2MI.value:
-			map = {'System':'system', 'Freq.':'frequency', 'Pol.':'polarization', 'SR':'symbol_rate', 'FEC':'fec_inner', 'Modul.':'modulation', 'Rolloff':'rolloff', 'Invers.':'inversion', 'Pilot':'pilot', 'IS ID':'is_id', 'PLS Mode':'pls_mode', 'PLS Code':'pls_code', 'T2MI ID':'t2mi_plp_id', 'T2MI PID': 't2mi_pid'}
+			map = {'System': 'system', 'Freq.': 'frequency', 'Pol.': 'polarization', 'SR': 'symbol_rate', 'FEC': 'fec_inner', 'Modul.': 'modulation', 'Rolloff': 'rolloff', 'Invers.': 'inversion', 'Pilot': 'pilot', 'IS ID': 'is_id', 'PLS Mode': 'pls_mode', 'PLS Code': 'pls_code', 'T2MI ID': 't2mi_plp_id', 'T2MI PID': 't2mi_pid'}
 		else:
-			map = {'System':'system', 'Freq.':'frequency', 'Pol.':'polarization', 'SR':'symbol_rate', 'FEC':'fec_inner', 'Modul.':'modulation', 'Rolloff':'rolloff', 'Invers.':'inversion', 'Pilot':'pilot', 'IS ID':'is_id', 'PLS Mode':'pls_mode', 'PLS Code':'pls_code', 'TSID':'tsid', 'ONID': 'onid'}
+			map = {'System': 'system', 'Freq.': 'frequency', 'Pol.': 'polarization', 'SR': 'symbol_rate', 'FEC': 'fec_inner', 'Modul.': 'modulation', 'Rolloff': 'rolloff', 'Invers.': 'inversion', 'Pilot': 'pilot', 'IS ID': 'is_id', 'PLS Mode': 'pls_mode', 'PLS Code': 'pls_code', 'TSID': 'tsid', 'ONID': 'onid'}
 		cur = map[self.row[self.currentSelectedColumn][0]]
 		return int(a.get(cur, '-1'))
 
@@ -881,6 +887,7 @@ class TranspondersEditor(Screen):
 		self['list'].setEntries(self.transponderslist)
 		global need_update
 		need_update = True
+
 
 class SatelliteList(MenuList):
 
@@ -934,6 +941,7 @@ class SatelliteList(MenuList):
 
 		self.l.setList(res)
 
+
 class SatEditor(Screen, ConfigListScreen):
 	flagNetworkScan = 1
 	flagUseBAT = 2
@@ -983,8 +991,10 @@ class SatEditor(Screen, ConfigListScreen):
 
 	def layoutFinished(self):
 		text = _('Edit ')
-		if self.clone: text = _('Clone current ')
-		if self.satelliteData is None: text = _('Add ')
+		if self.clone:
+			text = _('Clone current ')
+		if self.satelliteData is None:
+			text = _('Add ')
 		self.setTitle(text + self.satelliteName)
 
 	def createConfig(self):
@@ -1012,7 +1022,7 @@ class SatEditor(Screen, ConfigListScreen):
 
 	def cancel(self):
 		self.close(None)
- 
+
 	def okExit(self):
 		satelliteFlags = 0
 		if self.configSatelliteFlagNetworkScan.value:
@@ -1038,9 +1048,10 @@ class SatEditor(Screen, ConfigListScreen):
 					self.session.open(MessageBox, _('This position number is busy.\nSelect another position.'), MessageBox.TYPE_ERROR)
 					return
 		satelliteData = {'name': self.configSatelliteName.value, 'flags': str(satelliteFlags), 'position': str(satellitePosition)}
-		global need_update 
+		global need_update
 		need_update = True
 		self.close(satelliteData)
+
 
 class Head(HTMLComponent, GUIComponent):
 	def __init__(self):
@@ -1059,7 +1070,7 @@ class Head(HTMLComponent, GUIComponent):
 	def postWidgetCreate(self, instance):
 		instance.setContent(self.l)
 
-	def setEntries(self, data = None):
+	def setEntries(self, data=None):
 		res = [None]
 		if data is not None:
 			for x in data:
@@ -1069,6 +1080,7 @@ class Head(HTMLComponent, GUIComponent):
 					res.append(MultiContentEntryText(pos=(x[0], 0), size=(x[1], 20), font=0, flags=RT_HALIGN_CENTER | RT_VALIGN_TOP, text=x[2], color=12632256, backcolor=625428280, color_sel=16777215, backcolor_sel=627073024, border_width=1, border_color=15792383))
 
 		self.l.setList([res])
+
 
 class SatellitesEditor(Screen):
 	if FHD_Res:
@@ -1200,41 +1212,47 @@ class SatellitesEditor(Screen):
 
 	def nextPage(self):
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		self['list'].pageUp()
 		self.lastSelectedIndex = cur_idx
 		self.updateSelection()
 
 	def prevPage(self):
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		self['list'].pageDown()
 		self.lastSelectedIndex = cur_idx
 		self.updateSelection()
 
 	def up(self):
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		self['list'].up()
 		self.lastSelectedIndex = cur_idx
 		self.updateSelection()
 
 	def down(self):
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		self['list'].down()
 		self.lastSelectedIndex = cur_idx
 		self.updateSelection()
 
 	def upUp(self):
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		if self.lastSelectedIndex != cur_idx:
 			self.lastSelectedIndex = cur_idx
 
 	def downUp(self):
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		if self.lastSelectedIndex != cur_idx:
 			self.lastSelectedIndex = cur_idx
 
@@ -1248,7 +1266,8 @@ class SatellitesEditor(Screen):
 
 	def getInfo(self):
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		satellite = self.satelliteslist[cur_idx]
 		self.name = satellite[0].get('name')
 		self.position = satellite[0].get('position')
@@ -1542,6 +1561,7 @@ class SatellitesEditor(Screen):
 		cur_idx = self['list'].getSelectedIndex()
 		if cur_idx is not None:
 			menu.append((_("Clone current"), "clone"))
+
 		def addAction(choice):
 			if choice:
 				self.addNewSat = None
@@ -1568,14 +1588,16 @@ class SatellitesEditor(Screen):
 		if not len(self.satelliteslist):
 			return
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		self.session.openWithCallback(self.finishedTranspondersEdit, TranspondersEditor, self.satelliteslist[cur_idx])
 
 	def finishedTranspondersEdit(self, result):
 		if result is None:
 			return
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		self.satelliteslist[cur_idx][1] = result
 		global need_update
 		need_update = True
@@ -1584,14 +1606,16 @@ class SatellitesEditor(Screen):
 		if not len(self.satelliteslist):
 			return
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		self.session.openWithCallback(self.finishedSatEdit, SatEditor, self.satelliteslist, self.satelliteslist[cur_idx][0])
 
 	def finishedSatEdit(self, result):
 		if result is None:
 			return
 		cur_idx = self['list'].getSelectedIndex()
-		if cur_idx is None: return
+		if cur_idx is None:
+			return
 		pos = int(self.satelliteslist[cur_idx][0].get('position', '0'))
 		now_pos = int(result.get('position', '0'))
 		if pos != now_pos:
@@ -1604,7 +1628,8 @@ class SatellitesEditor(Screen):
 	def deleteSatellite(self):
 		if len(self.satelliteslist):
 			cur_idx = self['list'].getSelectedIndex()
-			if cur_idx is None: return
+			if cur_idx is None:
+				return
 			self.satelliteslist.pop(self['list'].getSelectedIndex())
 			self['list'].setEntries(self.satelliteslist)
 			global need_update
@@ -1614,7 +1639,8 @@ class SatellitesEditor(Screen):
 	def removeSatellite(self):
 		if len(self.satelliteslist):
 			cur_idx = self['list'].getSelectedIndex()
-			if cur_idx is None: return
+			if cur_idx is None:
+				return
 			satellite = self.satelliteslist[cur_idx][0].get('name')
 			cb_func = lambda ret: not ret or self.deleteSatellite()
 			self.session.openWithCallback(cb_func, MessageBox, _('Remove satellite %s?' % satellite), MessageBox.TYPE_YESNO)
@@ -1644,7 +1670,7 @@ class SatellitesEditor(Screen):
 			pass
 		else:
 			cb_func = lambda ret: not ret or self.writeSatellites()
-			self.session.openWithCallback(cb_func, MessageBox, _('Save new /etc/enigma2/satellites.xml? \n(This take some seconds.)'), MessageBox.TYPE_YESNO, default = False)
+			self.session.openWithCallback(cb_func, MessageBox, _('Save new /etc/enigma2/satellites.xml? \n(This take some seconds.)'), MessageBox.TYPE_YESNO, default=False)
 		self.cleansatellitesxml()
 		global need_update
 		need_update = False
@@ -1674,13 +1700,15 @@ class SatellitesEditor(Screen):
 	def blihdscanXML(self):
 		self.addNewSat = None
 		xml = self.isBlihdscanXML()
-		if not xml: return
+		if not xml:
+			return
 		text = _("Select action for blindscan.xml:")
-		menu = [(_("Show blindscan.xml"), "show"),(_("Add in user satellites.xml"), "add")]
+		menu = [(_("Show blindscan.xml"), "show"), (_("Add in user satellites.xml"), "add")]
+
 		def addAction(choice):
 			if choice:
 				if choice[1] == "show":
-					self.session.open(Console,_('Show blindscan.xml'),["cat %s" % xml])
+					self.session.open(Console, _('Show blindscan.xml'), ["cat %s" % xml])
 				elif choice[1] == "add":
 					blindscan_satelliteslist = self.readSatellites(xml, stop=False)
 					if blindscan_satelliteslist:

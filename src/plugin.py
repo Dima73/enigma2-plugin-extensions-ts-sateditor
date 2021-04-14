@@ -13,6 +13,7 @@ import os
 
 loadScript = "/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/update-xml-oe.sh"
 
+
 def SatellitesEditorMain(session, **kwargs):
 	menu = []
 	text = _("Select action:")
@@ -80,23 +81,27 @@ def SatellitesEditorMain(session, **kwargs):
 				elif choice[1] == "t2mi":
 					restart = False
 					config.misc.tssateditorT2MI.value = not config.misc.tssateditorT2MI.value
-					config.misc.tssateditorT2MI.save() 
+					config.misc.tssateditorT2MI.save()
 				if restart:
 					restartGui(session)
 		session.openWithCallback(boxAction, ChoiceBox, title=text, list=menu)
 
+
 def restartGui(session=None):
 	if session and not session.nav.getRecordings():
-		session.openWithCallback(boundFunction(restartGuiNow, session), MessageBox, _("Restart the GUI now?"), MessageBox.TYPE_YESNO, default = False)
+		session.openWithCallback(boundFunction(restartGuiNow, session), MessageBox, _("Restart the GUI now?"), MessageBox.TYPE_YESNO, default=False)
+
 
 def restartGuiNow(session, answer):
 	if answer and session:
 		session.open(TryQuitMainloop, 3)
 
+
 def SatellitesEditorStart(menuid, **kwargs):
 	if menuid == 'scan':
 		return [(_('TS-Satellites Editor'), SatellitesEditorMain, 'sat_editor', None)]
 	return []
+
 
 def Plugins(**kwargs):
 	if nimmanager.hasNimType('DVB-S'):
