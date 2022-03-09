@@ -1666,13 +1666,13 @@ class SatellitesEditor(Screen):
 		need_update = True
 
 	def Exit(self):
+		global need_update
 		if need_update == False:
 			pass
 		else:
 			cb_func = lambda ret: not ret or self.writeSatellites()
 			self.session.openWithCallback(cb_func, MessageBox, _('Save new /etc/enigma2/satellites.xml? \n(This take some seconds.)'), MessageBox.TYPE_YESNO, default=False)
 		self.cleansatellitesxml()
-		global need_update
 		need_update = False
 		if self.updateSatList:
 			self.close(self.session)
