@@ -8,7 +8,7 @@ from Screens.Standby import TryQuitMainloop
 from Screens.MessageBox import MessageBox
 from Tools.BoundFunction import boundFunction
 from Components.config import config
-import satedit
+from Plugins.SystemPlugins.TSsatEditor import satedit
 import os
 
 loadScript = "/usr/lib/enigma2/python/Plugins/SystemPlugins/TSsatEditor/update-xml-oe.sh"
