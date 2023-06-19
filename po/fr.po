@@ -1,0 +1,313 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-26 17:33+0300\n"
+"PO-Revision-Date: 2023-06-19 10:02+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.3.1\n"
+
+#: satedit.py:691 satedit.py:1116
+msgid "Add"
+msgstr "Ajouter"
+
+#: satedit.py:987
+msgid "Add "
+msgstr "Ajouter "
+
+#: satedit.py:1679
+msgid "Add in user satellites.xml"
+msgstr "Ajouter dans satellites.xml de l'utilisateur"
+
+#: satedit.py:1541
+msgid "Add new"
+msgstr "Ajouter nouveau"
+
+#: satedit.py:516
+msgid "Add transponder"
+msgstr "Ajouter un transpondeur"
+
+#: satedit.py:1672
+msgid ""
+"Autor original code mfaraj57\n"
+"Further development Dimitrij openPLi"
+msgstr ""
+"Auteur code original mfaraj57\n"
+"Développement ultérieur Dimitrij openPLi"
+
+#: satedit.py:1008
+msgid "BAT"
+msgstr "BAT"
+
+#: satedit.py:1544
+msgid "Clone current"
+msgstr "Cloner le courant"
+
+#: satedit.py:986
+msgid "Clone current "
+msgstr "Cloner le courant"
+
+#: satedit.py:502 satedit.py:975
+msgid "Close"
+msgstr "Fermer"
+
+#: plugin.py:42 plugin.py:78
+msgid "Create user '/etc/enigma2/cables.xml'"
+msgstr "Créer '/etc/enigma2/cables.xml' utilisateur"
+
+#: plugin.py:25 plugin.py:66
+msgid "Create user '/etc/enigma2/satellites.xml'"
+msgstr "Créer '/etc/enigma2/satellites.xml' utilisateur"
+
+#: plugin.py:26
+msgid "Create user '/etc/enigma2/satellites.xml' (use default)"
+msgstr "Créer '/etc/enigma2/satellites.xml' utilisateur (utiliser par défaut)"
+
+#: plugin.py:37 plugin.py:72
+msgid "Create user '/etc/enigma2/terrestrial.xml'"
+msgstr "Créer '/etc/enigma2/terrestrial.xml' utilisateur"
+
+#: satedit.py:519
+msgid "DVB-S"
+msgstr "DVB-S"
+
+#: satedit.py:519
+msgid "DVB-S2"
+msgstr "DVB-S2"
+
+#: plugin.py:21
+msgid "Disable user '/etc/enigma2/satellites.xml'"
+msgstr "Désactiver '/etc/enigma2/satellites.xml' utilisateur"
+
+#: satedit.py:690 satedit.py:1115
+msgid "Edit"
+msgstr "Éditer"
+
+#: satedit.py:985
+msgid "Edit "
+msgstr "Éditer "
+
+#: satedit.py:514
+msgid "Edit transponder"
+msgstr "Éditer transpondeur"
+
+#: plugin.py:28
+msgid "Enable user '/etc/enigma2/satellites.xml'"
+msgstr "Activer  '/etc/enigma2/satellites.xml' utilisateur"
+
+#: satedit.py:573 satedit.py:575
+msgid "FEC"
+msgstr "FEC"
+
+#: satedit.py:569
+msgid "Frequency"
+msgstr "Fréquence"
+
+#: satedit.py:586
+msgid "Input Stream ID"
+msgstr "Saisir le Stream ID"
+
+#: satedit.py:577
+msgid "Inversion"
+msgstr "Inversion"
+
+#: satedit.py:579
+msgid "Modulation"
+msgstr "Modulation"
+
+#: satedit.py:1004
+msgid "Name"
+msgstr "Nom"
+
+#: satedit.py:1007
+msgid "Network scan"
+msgstr "Recherche du réseau"
+
+#: satedit.py:503 satedit.py:976
+msgid "OK"
+msgstr "Ok"
+
+#: satedit.py:601
+msgid "ONID"
+msgstr "ONID"
+
+#: satedit.py:1009
+msgid "ONIT"
+msgstr "ONIT"
+
+#: plugin.py:20
+msgid "Open user '/etc/enigma2/satellites.xml'"
+msgstr "Ouvrir  '/etc/enigma2/satellites.xml' utilisateur"
+
+#: satedit.py:1006
+msgid "Orientation"
+msgstr "Orientation"
+
+#: satedit.py:588
+msgid "PLS Code"
+msgstr "Code PLS"
+
+#: satedit.py:587
+msgid "PLS Mode"
+msgstr "Mode PLS"
+
+#: satedit.py:581
+msgid "Pilot"
+msgstr "Pilote"
+
+#: satedit.py:570
+msgid "Polarization"
+msgstr "Polarisation"
+
+#: satedit.py:1005 satedit.py:1152
+msgid "Position"
+msgstr "Position"
+
+#: satedit.py:689 satedit.py:1114
+msgid "Remove"
+msgstr "Supprimer"
+
+#: satedit.py:1620
+#, python-format
+msgid "Remove satellite %s?"
+msgstr "Supprimer le satellite %s?"
+
+#: satedit.py:852
+msgid "Remove transponder?"
+msgstr "Supprimer le transpondeur?"
+
+#: plugin.py:40
+msgid "Remove user '/etc/enigma2/cables.xml'"
+msgstr "Supprimer '/etc/enigma2/cables.xml' utilisateur"
+
+#: plugin.py:22
+msgid "Remove user '/etc/enigma2/satellites.xml'"
+msgstr "Supprimer '/etc/enigma2/satellites.xml' utilisateur"
+
+#: plugin.py:35
+msgid "Remove user '/etc/enigma2/terrestrial.xml'"
+msgstr "Supprimer '/etc/enigma2/terrestrial.xml' utilisateur"
+
+#: plugin.py:90
+msgid "Restart the GUI now?"
+msgstr "Redémarrer l'IGU maintenant?"
+
+#: satedit.py:580
+msgid "RollOff"
+msgstr "RollOff"
+
+#: satedit.py:1152
+msgid "Satellites"
+msgstr "Satellites"
+
+#: satedit.py:1647
+msgid ""
+"Save new /etc/enigma2/satellites.xml? \n"
+"(This take some seconds.)"
+msgstr ""
+"Sauvergarder le nouveau /etc/enigma2/satellites.xml? \n"
+"(Cela peut prendre du temps.)"
+
+#: satedit.py:1678
+msgid "Select action for blindscan.xml:"
+msgstr "Sélectionenr une actions pour blindscan.xml:"
+
+#: plugin.py:18 satedit.py:1540
+msgid "Select action:"
+msgstr "Choisir une action:"
+
+#: satedit.py:1679 satedit.py:1683
+msgid "Show blindscan.xml"
+msgstr "Afficher blindscan.xml"
+
+#: satedit.py:1028
+msgid "Sorry, you can not use prime meridian."
+msgstr "Désolé, vous ne pouvez pas utiliser le premier méridien."
+
+#: satedit.py:692 satedit.py:1117
+msgid "Sort"
+msgstr "Trier"
+
+#: satedit.py:571
+msgid "Symbolrate"
+msgstr "Symbolrate"
+
+#: satedit.py:567
+msgid "System"
+msgstr "Système"
+
+#: plugin.py:98
+msgid "TS-Satellites Editor"
+msgstr "Éditeur TS-Satellites"
+
+#: satedit.py:1158
+#, python-format
+msgid "TS-Satellites Editor:%s"
+msgstr "Éditeur TS-Satellites:%s"
+
+#: satedit.py:598
+msgid "TSID"
+msgstr "TSID"
+
+#: satedit.py:1038
+msgid ""
+"This position number is busy.\n"
+"Select another position."
+msgstr ""
+"Ce numéro de position est déjà utilisé.\n"
+"Choisissez une autre position."
+
+#: satedit.py:731
+#, python-format
+msgid "Transponders Editor (%s)"
+msgstr "Éditeur de transpondeur (%s)"
+
+#: plugin.py:32 satedit.py:591
+msgid "Use T2MI PLP"
+msgstr "Utiliser T2MI PLP"
+
+#: plugin.py:30
+msgid "Use TSID/ONID"
+msgstr "Utiliser TSID/ONID"
+
+#: satedit.py:584
+msgid "Use multistream"
+msgstr "Utiliser multistream"
+
+#: satedit.py:599
+msgid "Use onid"
+msgstr "Utiliser onid"
+
+#: satedit.py:596
+msgid "Use tsid"
+msgstr "Utiliser tsid"
+
+#: plugin.py:103
+msgid "User satellites.xml"
+msgstr "satellites.xml utilisateurs"
+
+#: satedit.py:523 satedit.py:1348
+msgid "circular left"
+msgstr "Circulaire à gauche"
+
+#: satedit.py:524 satedit.py:1349
+msgid "circular right"
+msgstr "Circulaire à droite"
+
+#: satedit.py:521 satedit.py:1346
+msgid "horizontal"
+msgstr "Horizontale"
+
+#: satedit.py:522 satedit.py:1347
+msgid "vertical"
+msgstr "Verticale"
