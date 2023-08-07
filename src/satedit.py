@@ -396,7 +396,7 @@ class Transponder():
 class TransponderList(MenuList):
 
         def __init__(self):
-                MenuList.__init__(self, list=[], enableWrapAround=True, content=eListboxPythonMultiContent)
+                MenuList.__init__(self, [], enableWrapAround=True, content=eListboxPythonMultiContent)
                 if FHD_Res:
                         self.rowHight = 40
                         self.l.setItemHeight(40)
@@ -891,7 +891,7 @@ class TranspondersEditor(Screen):
 class SatelliteList(MenuList):
 
         def __init__(self):
-                MenuList.__init__(self, list=[], enableWrapAround=True, content=eListboxPythonMultiContent)
+                MenuList.__init__(self, [], enableWrapAround=True, content=eListboxPythonMultiContent)
                 if FHD_Res:
                         self.l.setItemHeight(40)
                         self.l.setFont(0, gFont('Regular', 27))
