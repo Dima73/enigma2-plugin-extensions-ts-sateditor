@@ -462,8 +462,12 @@ class TransponderList(MenuList):
                 tsid_t2mi_plp_id = transponder.tsid
                 onid_t2mi_pid = transponder.onid
             else:
-                tsid_t2mi_plp_id = transponder.t2mi_plp_id
-                onid_t2mi_pid = transponder.t2mi_pid
+                if transponder.UseT2MI:
+                    tsid_t2mi_plp_id = transponder.t2mi_plp_id
+                    onid_t2mi_pid = transponder.t2mi_pid
+                else:
+                    tsid_t2mi_plp_id = ""
+                    onid_t2mi_pid = ""
             if FHD_Res:
                 tp.append(
                     MultiContentEntryText(
@@ -974,7 +978,6 @@ class TransponderList(MenuList):
             res.append(tp)
 
         self.l.setList(res)
-
 
 class TransponderEditor(Screen, ConfigListScreen, Transponder):
 
