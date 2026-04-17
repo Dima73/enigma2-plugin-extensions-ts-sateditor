@@ -9,44 +9,51 @@ import os
 
 
 class build_trans(cmd.Command):
-	description = 'Compile .po files into .mo files'
+    description = "Compile .po files into .mo files"
 
-	def initialize_options(self):
-		pass
+    def initialize_options(self):
+        pass
 
-	def finalize_options(self):
-		pass
+    def finalize_options(self):
+        pass
 
-	def run(self):
-		s = os.path.join('po')
-		lang_domains = glob.glob(os.path.join(s, '*.pot'))
-		if len(lang_domains):
-			for lang in os.listdir(s):
-				if lang.endswith('.po'):
-					src = os.path.join(s, lang)
-					lang = lang[:-3]
-					destdir = os.path.join('build', 'lib', 'SystemPlugins',
-						'TSsatEditor', 'locale', lang, 'LC_MESSAGES')
-					if not os.path.exists(destdir):
-						os.makedirs(destdir)
-					for lang_domain in lang_domains:
-						lang_domain = lang_domain.rsplit('/', 1)[1]
-						dest = os.path.join(destdir, lang_domain[:-3] + 'mo')
-						print("Language compile %s -> %s" % (src, dest))
-						if os.system("msgfmt '%s' -o '%s'" % (src, dest)) != 0:
-							raise Exception("Failed to compile: " + src)
-		else:
-			print("we got no domain -> no translation was compiled")
+    def run(self):
+        s = os.path.join("po")
+        lang_domains = glob.glob(os.path.join(s, "*.pot"))
+        if len(lang_domains):
+            for lang in os.listdir(s):
+                if lang.endswith(".po"):
+                    src = os.path.join(s, lang)
+                    lang = lang[:-3]
+                    destdir = os.path.join(
+                        "build",
+                        "lib",
+                        "SystemPlugins",
+                        "TSsatEditor",
+                        "locale",
+                        lang,
+                        "LC_MESSAGES",
+                    )
+                    if not os.path.exists(destdir):
+                        os.makedirs(destdir)
+                    for lang_domain in lang_domains:
+                        lang_domain = lang_domain.rsplit("/", 1)[1]
+                        dest = os.path.join(destdir, lang_domain[:-3] + "mo")
+                        print("Language compile %s -> %s" % (src, dest))
+                        if os.system("msgfmt '%s' -o '%s'" % (src, dest)) != 0:
+                            raise Exception("Failed to compile: " + src)
+        else:
+            print("we got no domain -> no translation was compiled")
 
 
 class build(_build):
-	sub_commands = _build.sub_commands + [('build_trans', None)]
+    sub_commands = _build.sub_commands + [("build_trans", None)]
 
-	def run(self):
-		_build.run(self)
+    def run(self):
+        _build.run(self)
 
 
 cmdclass = {
-	'build': build,
-	'build_trans': build_trans,
+    "build": build,
+    "build_trans": build_trans,
 }
